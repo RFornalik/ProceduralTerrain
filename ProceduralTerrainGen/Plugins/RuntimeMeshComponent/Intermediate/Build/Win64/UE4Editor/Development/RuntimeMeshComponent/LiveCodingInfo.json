@@ -1,0 +1,69 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RuntimeMeshComponent.cpp.obj": [
+			"RuntimeMeshComponentStatic.cpp.obj",
+			"RuntimeMeshModifierAdjacency.cpp.obj",
+			"RuntimeMeshModifierNormals.cpp.obj",
+			"RuntimeMeshProviderBox.cpp.obj",
+			"RuntimeMeshProviderCollision.cpp.obj",
+			"RuntimeMeshProviderMemoryCache.cpp.obj",
+			"RuntimeMeshProviderModifiers.cpp.obj",
+			"RuntimeMeshProviderPlane.cpp.obj",
+			"RuntimeMeshProviderSphere.cpp.obj",
+			"RuntimeMeshProviderStatic.cpp.obj",
+			"RuntimeMeshProviderStaticMesh.cpp.obj",
+			"RuntimeMesh.cpp.obj",
+			"RuntimeMeshActor.cpp.obj",
+			"RuntimeMeshBlueprintFunctions.cpp.obj",
+			"RuntimeMeshComponent.cpp.obj",
+			"RuntimeMeshComponentEngineSubsystem.cpp.obj",
+			"RuntimeMeshComponentPlugin.cpp.obj",
+			"RuntimeMeshComponentProxy.cpp.obj",
+			"RuntimeMeshComponentSettings.cpp.obj",
+			"RuntimeMeshCore.cpp.obj",
+			"RuntimeMeshModifier.cpp.obj",
+			"RuntimeMeshProvider.cpp.obj",
+			"RuntimeMeshProviderTargetInterface.cpp.obj",
+			"RuntimeMeshProxy.cpp.obj",
+			"RuntimeMeshRendering.cpp.obj",
+			"RuntimeMeshSectionProxy.cpp.obj",
+			"RuntimeMeshSlicer.cpp.obj",
+			"RuntimeMeshStaticMeshConverter.cpp.obj"
+		],
+		"Module.RuntimeMeshComponent.gen.1_of_4.cpp.obj": [
+			"RuntimeMesh.gen.cpp.obj",
+			"RuntimeMeshActor.gen.cpp.obj",
+			"RuntimeMeshBlueprintFunctions.gen.cpp.obj"
+		],
+		"Module.RuntimeMeshComponent.gen.2_of_4.cpp.obj": [
+			"RuntimeMeshCollision.gen.cpp.obj",
+			"RuntimeMeshComponent.gen.cpp.obj",
+			"RuntimeMeshComponent.init.gen.cpp.obj",
+			"RuntimeMeshComponentEngineSubsystem.gen.cpp.obj",
+			"RuntimeMeshComponentSettings.gen.cpp.obj",
+			"RuntimeMeshComponentStatic.gen.cpp.obj",
+			"RuntimeMeshCore.gen.cpp.obj",
+			"RuntimeMeshModifier.gen.cpp.obj"
+		],
+		"Module.RuntimeMeshComponent.gen.3_of_4.cpp.obj": [
+			"RuntimeMeshModifierAdjacency.gen.cpp.obj",
+			"RuntimeMeshModifierNormals.gen.cpp.obj",
+			"RuntimeMeshProvider.gen.cpp.obj",
+			"RuntimeMeshProviderBox.gen.cpp.obj",
+			"RuntimeMeshProviderCollision.gen.cpp.obj",
+			"RuntimeMeshProviderMemoryCache.gen.cpp.obj",
+			"RuntimeMeshProviderModifiers.gen.cpp.obj",
+			"RuntimeMeshProviderPlane.gen.cpp.obj",
+			"RuntimeMeshProviderSphere.gen.cpp.obj",
+			"RuntimeMeshProviderStatic.gen.cpp.obj",
+			"RuntimeMeshProviderStaticMesh.gen.cpp.obj",
+			"RuntimeMeshProviderTargetInterface.gen.cpp.obj"
+		],
+		"Module.RuntimeMeshComponent.gen.4_of_4.cpp.obj": [
+			"RuntimeMeshRenderable.gen.cpp.obj",
+			"RuntimeMeshSlicer.gen.cpp.obj",
+			"RuntimeMeshStaticMeshConverter.gen.cpp.obj"
+		]
+	}
+}

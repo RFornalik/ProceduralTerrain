@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "RuntimeMeshCore.h"
+#include "ProceduralMeshComponent.h"
 #include "ProceduralTerrainGenerator.generated.h"
 
 //Terrain Generation Enumerator, used for biomes and terrain pre-deformations.
@@ -44,19 +46,27 @@ public:
 
 	//DEBUG
 	UPROPERTY(VisibleAnywhere, Category = "Debug")
-		TArray<FVector> debugvectors;
+		TArray<int32> debug;
+	UPROPERTY(VisibleAnywhere, Category = "Debug")
+		TArray<FIntPoint> threadMap;
 	UPROPERTY(EditAnywhere, Category = "Debug")
 		TArray<FIntPoint> chunks;
 
 
 
-	UPROPERTY()
-		class UProceduralMeshComponent* meshGenerator;
+	UPROPERTY(EditAnywhere, Category = "Rendering")
+		class URuntimeMeshComponentStatic* meshGenerator;
+	//class UProceduralMeshComponent* meshGenerator;
 	UPROPERTY(VisibleAnywhere, Category = "WorldGeneration")
 		TMap<FIntPoint, int32> ChunkMap;
 
-	UPROPERTY(EditAnywhere, Category = "Visual")
+	UPROPERTY(EditAnywhere, Category = "Rendering")
 		UMaterialInterface* material;
+	UPROPERTY(EditAnywhere, Category = "Rendering")
+		uint32 renderDistanceInChunks=2;
+	UPROPERTY(EditAnywhere, Category = "Rendering")
+		class ACharacter* trackedCharacter;
+	
 
 	
 	UFUNCTION(BlueprintCallable, Category = "World Generation")
@@ -64,11 +74,21 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "World Generation")
 		bool RemoveChunk(FIntPoint coordinates);
 	UFUNCTION()
-		float BiomeDeform(FVector2D vert, EBiomeType biome);
+		void TrackCharacter();
+	UFUNCTION(CallInEditor)
+		void CatchChunks();
 
 
-		float MapBiome(FVector2D pos,float biome);
-		float WeightInterpolation(float A, float valueA, float B, float valueB, float alpha, float tolerance);
+	void ReceiveChunk(
+		FIntPoint chunk,
+		TArray<FVector>& verts,
+		TArray<int32>& tris,
+
+		TArray<FVector2D>& UV0,
+		TArray<FVector2D>& UVB
+	);
+
+
 
 	
 	virtual void OnConstruction(const FTransform& Transform) override;
@@ -82,5 +102,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+private:
+	FIntPoint lastCharChunk = FIntPoint(-1, -1);
+	TMap<FIntPoint, class FChunkMachine*> threads;
 };

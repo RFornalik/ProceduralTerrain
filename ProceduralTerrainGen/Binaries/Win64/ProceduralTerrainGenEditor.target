@@ -28,6 +28,22 @@
 			"Type": "Executable"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/RuntimeMeshComponent/Binaries/Win64/UE4Editor-RuntimeMeshComponent.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/RuntimeMeshComponent/Binaries/Win64/UE4Editor-RuntimeMeshComponent.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/RuntimeMeshComponent/Binaries/Win64/UE4Editor-RuntimeMeshComponentEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/RuntimeMeshComponent/Binaries/Win64/UE4Editor-RuntimeMeshComponentEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/SimplexNoise/Binaries/Win64/UE4Editor-SimplexNoise.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -2280,6 +2296,10 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/RuntimeMeshComponent/Binaries/Win64/UE4Editor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/SimplexNoise/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
@@ -2743,6 +2763,10 @@
 	"RuntimeDependencies": [
 		{
 			"Path": "$(ProjectDir)/ProceduralTerrainGen.uproject",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/RuntimeMeshComponent/RuntimeMeshComponent.uplugin",
 			"Type": "UFS"
 		},
 		{

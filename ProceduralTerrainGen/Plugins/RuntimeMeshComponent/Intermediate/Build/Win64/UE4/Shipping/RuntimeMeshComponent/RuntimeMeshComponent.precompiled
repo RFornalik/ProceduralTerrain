@@ -1,0 +1,9 @@
+{
+	"OutputFiles": [
+		"Module.RuntimeMeshComponent.cpp.obj",
+		"Module.RuntimeMeshComponent.gen.1_of_4.cpp.obj",
+		"Module.RuntimeMeshComponent.gen.2_of_4.cpp.obj",
+		"Module.RuntimeMeshComponent.gen.3_of_4.cpp.obj",
+		"Module.RuntimeMeshComponent.gen.4_of_4.cpp.obj"
+	]
+}

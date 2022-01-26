@@ -10,7 +10,7 @@ public class ProceduralTerrainGen : ModuleRules
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","SimplexNoise" });
 		PrivateDependencyModuleNames.AddRange(new string[] {
-		"ProceduralMeshComponent"
+		"ProceduralMeshComponent","RuntimeMeshComponent"
 		});
 	}
 }

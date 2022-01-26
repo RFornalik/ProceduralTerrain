@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RuntimeMeshComponentEditor.cpp.obj": [
+			"RuntimeMeshComponentDetails.cpp.obj",
+			"RuntimeMeshComponentEditorCommands.cpp.obj",
+			"RuntimeMeshComponentEditorPlugin.cpp.obj",
+			"RuntimeMeshComponentEditorStyle.cpp.obj"
+		]
+	}
+}
