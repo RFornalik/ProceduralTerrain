@@ -705,9 +705,9 @@ void URuntimeMeshProviderStatic::UpdateSectionInternal(int32 LODIndex, int32 Sec
 
 		for (URuntimeMeshModifier* Modifier : CurrentMeshModifiers)
 		{
-			check(Modifier->IsValidLowLevel());
+			//check(Modifier->IsValidLowLevel());
 
-			Modifier->ApplyToMesh(SectionData);
+			//Modifier->ApplyToMesh(SectionData);
 		}
 	}
 

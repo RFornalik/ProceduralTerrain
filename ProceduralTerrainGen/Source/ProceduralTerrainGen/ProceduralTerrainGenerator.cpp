@@ -23,14 +23,6 @@ AProceduralTerrainGenerator::AProceduralTerrainGenerator()
 
 	PrimaryActorTick.bCanEverTick = true;
 	meshGenerator = CreateDefaultSubobject<URuntimeMeshComponentStatic>("mesh");
-	meshGenerator->DisableNormalTangentGeneration();
-	meshGenerator->SetupMaterialSlot(3, "MatSlot", material);
-
-
-	
-	
-
-
 
 }
 
@@ -38,10 +30,7 @@ AProceduralTerrainGenerator::AProceduralTerrainGenerator()
 void AProceduralTerrainGenerator::BeginPlay()
 {
 	Super::BeginPlay();
-	meshGenerator->EnableNormalTangentGeneration();
-	//trackedCharacter->CustomTimeDilation = 0.0f;
 
-	
 }
 
 // Called every frame
@@ -49,8 +38,7 @@ void AProceduralTerrainGenerator::Tick(float DeltaTime)
 {
 
 	Super::Tick(DeltaTime);
-	TrackCharacter();
-	CatchChunks();
+	if(bRun)TrackCharacter();
 }
 
 
@@ -59,67 +47,75 @@ void AProceduralTerrainGenerator::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
 	USimplexNoiseBPLibrary::setNoiseSeed(noiseSeed);
-	TArray<FIntPoint> keys;
-	ChunkMap.GetKeys(keys);
-	
-	FRuntimeMeshCollisionSettings settings;
-	settings.bUseAsyncCooking = true;
-	settings.bUseComplexAsSimple = true;
-	meshGenerator->SetCollisionSettings(settings);
-	meshGenerator->SetRenderableLODForCollision(0);
-	while(ChunkMap.Num()>0)
-	{
-		meshGenerator->ClearSection(0, ChunkMap.FindAndRemoveChecked(keys[0]));
-	}
-	
-	meshGenerator->RemoveAllSectionsForLOD(0);
-
-	
-	ChunkMap.Empty();
-	for (int i = 0; i < chunks.Num(); i++)
-	{
-		CreateChunk(chunks[i]);
-	}
-
 }
 
 bool AProceduralTerrainGenerator::CreateChunk(FIntPoint coordinates)
 {
+	if (chunkResolution < 2) return false;
 
-	if (ChunkMap.Contains(coordinates) ||  chunkResolution<2) return false;
-	if (threads.Contains(coordinates)) 
+	TArray<FVector> verts;
+	TArray<int32> tris;
+	TArray<FVector2D> UV0, UV_Biome;
+	TArray<AActor*> structs;
+	float step = chunkSize / (chunkResolution - 1);
+	float biome;
+
+
+	UKismetProceduralMeshLibrary::CreateGridMeshWelded(chunkResolution, chunkResolution, tris, verts, UV0, step);
+	UV_Biome.Reserve(UV0.Num());
+	int32 x = coordinates.X * chunkSize;
+	int32 y = coordinates.Y * chunkSize;
+	AActor* placedActor;
+	for (int32 i = 0; i < verts.Num(); i++)
 	{
-		delete threads.FindAndRemoveChecked(coordinates);
-		threadMap.Remove(coordinates);
-	} 
+		FVector& vert = verts[i];
 
-	FChunkMachine* threadedChunk = new FChunkMachine(coordinates, 0 ,this);
-	threads.Add(coordinates, threadedChunk);
-	threadMap.Add(coordinates);
 
+
+		vert.X += x;
+		vert.Y += y;
+
+
+		biome = USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X / biomeScale, vert.Y / biomeScale, 2.3f, 0.6f, 4, 1, true);
+		UV_Biome.Add(FVector2D(biome));
+
+		vert.Z += MapBiome(FVector2D(vert.X / noiseScale, vert.Y / noiseScale), biome) * heightScale;	
+
+		placedActor = GetActorOnPoint(vert, i, biome);
+		if (placedActor) structs.Add(placedActor);
+
+	}
+
+	ReceiveChunk(coordinates, verts, tris, UV0, UV_Biome, structs);
 	return true;
 }
 
 bool AProceduralTerrainGenerator::RemoveChunk(FIntPoint coordinates)
 {
 	if (!ChunkMap.Contains(coordinates)) return false;
-	meshGenerator->ClearSection(0, ChunkMap.FindAndRemoveChecked(coordinates));
+	FChunkData data = ChunkMap.FindRef(coordinates);
+	for(int i = 0;i<data.placeableStructures.Num();i++)
+	{
+		data.placeableStructures[i]->Destroy();
+	}
+	meshGenerator->GetProvider()->RemoveSection(0, data.meshSectionID);
+	ChunkMap.Remove(coordinates);
 
 	return true;
 }
 
 
 void AProceduralTerrainGenerator::ReceiveChunk(FIntPoint chunk, TArray<FVector>& verts, TArray<int32>& tris,
-	TArray<FVector2D>& UV0, TArray<FVector2D>& UVB)
+	TArray<FVector2D>& UV0, TArray<FVector2D>& UVB, TArray<AActor*>& structures)
 {
-	int32 index = meshGenerator->GetSectionIds(0).Num();
+	int32 index = FindFirstFreeInt(meshGenerator->GetSectionIds(0));
 	TArray<FVector2D> emptyUVs = TArray<FVector2D>();
 	FIntPoint tmpDiff = chunk - lastCharChunk;
 	int32 dist = FMath::Abs(tmpDiff.X) + FMath::Abs(tmpDiff.Y);
-	meshGenerator->CreateSectionFromComponents(0,index,3,verts,tris,TArray<FVector>(),UV0,UVB,emptyUVs,emptyUVs,TArray<FColor>(),TArray<FRuntimeMeshTangent>());
-	meshGenerator->SetMaterial(3,material);
-	ChunkMap.Add(chunk, index);
-	meshGenerator->SetRenderableSectionAffectsCollision(index, dist <= 2);
+	FChunkData tmp = FChunkData(index, structures);
+	meshGenerator->CreateSectionFromComponents(0,index,0,verts,tris,TArray<FVector>(),UV0,UVB,emptyUVs,emptyUVs,TArray<FColor>(),TArray<FRuntimeMeshTangent>());
+
+	ChunkMap.Add(chunk, tmp);
 }
 
 
@@ -130,19 +126,14 @@ void AProceduralTerrainGenerator::TrackCharacter()
 	{
 
 
-
 		FIntPoint charChunk = FIntPoint(
 			(int32)trackedCharacter->GetActorLocation().X / chunkSize,
 			(int32)trackedCharacter->GetActorLocation().Y / chunkSize
 		);
-		if(
-			charChunk!=lastCharChunk || 
-			((ChunkMap.Num() + threads.Num() ) != (renderDistanceInChunks * 2 + 1)*(renderDistanceInChunks * 2 + 1))
-			)
+		if(charChunk!=lastCharChunk)
 		{
 			lastCharChunk = charChunk;
 			TArray<FIntPoint> chunksToAdd;
-
 			for(int32 x =-(int32)renderDistanceInChunks;x <= (int32)renderDistanceInChunks;x++)
 			{
 				for (int32 y = -(int32)renderDistanceInChunks; y <= (int32)renderDistanceInChunks; y++)
@@ -151,94 +142,135 @@ void AProceduralTerrainGenerator::TrackCharacter()
 				}
 			}
 
-			TArray<FIntPoint> keys; 
+
+
+			TArray<FIntPoint> keys;
 			ChunkMap.GetKeys(keys);
-			for (int i=0;i<keys.Num();i++)
+			for(int i = 0; i<keys.Num();i++)
 			{
 				if (!chunksToAdd.Contains(keys[i])) RemoveChunk(keys[i]);
-				else 
+				else
 				{
 					FIntPoint tmpDiff = keys[i] - charChunk;
-					int distance = FMath::Abs(tmpDiff.X) + FMath::Abs(tmpDiff.Y);
-					if (meshGenerator->GetSectionsForMeshCollision().Contains(*ChunkMap.Find(keys[i])) != distance <= 2)
-					{
-						meshGenerator->SetRenderableSectionAffectsCollision(*ChunkMap.Find(keys[i]), distance <= 2);
-					}
-						
 				}
-
-			}
-			keys.Empty();
-			threads.GetKeys(keys);
-
-			for (int i = 0; i < keys.Num(); i++)
-			{
-				if (!chunksToAdd.Contains(keys[i])) 
-				{
-					delete threads.FindAndRemoveChecked(keys[i]);
-					threadMap.Remove(keys[i]);
-				}
-
 			}
 
-			for(int32 i = 0; i< chunksToAdd.Num();i++)
+			for(int i = 0;i< chunksToAdd.Num();i++)
 			{
 				if(!ChunkMap.Contains(chunksToAdd[i]))
 				{
-					if(!threads.Contains(chunksToAdd[i])) CreateChunk(chunksToAdd[i]);
+					CreateChunk(chunksToAdd[i]);
 				}
 			}
 
-
-
-
-
 		}
 	}
 }
 
-void AProceduralTerrainGenerator::CatchChunks()
+float AProceduralTerrainGenerator::WeightInterpolation(float A, float valueA, float B, float valueB, float alpha)
 {
-	TArray<FIntPoint> pendingChunks;
-	threads.GetKeys(pendingChunks);
-	if (pendingChunks.Num() == 0) return;
-	FChunkMachine* checkedChunk;
-	TArray<FVector> empty;
-	TArray<FRuntimeMeshTangent> emptyt;
-	int count = 0;
-	for(int32 i = 0;i< pendingChunks.Num();i++)
+	alpha = FMath::Clamp(UKismetMathLibrary::NormalizeToRange(alpha, valueA, valueB), 0.0f, 1.0f);
+
+	return FMath::Lerp(A, B, alpha);
+}
+float AProceduralTerrainGenerator::BiomeDeform(FVector2D vert, EBiomeType biome)
+{
+
+	switch (biome)
 	{
-		checkedChunk = threads.FindRef(pendingChunks[i]);
-		if(checkedChunk->bIsChunkReady)
-		{
-			count++;
-
-		}
-
+	case EBiomeType::SEA:
+	{
+		return BiomeDeform(vert, EBiomeType::STD) * 2 - 200;
 	}
-	if(count == pendingChunks.Num() && pendingChunks.Num() != 0)
+	case EBiomeType::BEACH:
 	{
-		for(int32 i = 0; i < pendingChunks.Num(); i++)
-		{
-			checkedChunk = threads.FindRef(pendingChunks[i]);
-			ReceiveChunk
-			(
-				pendingChunks[i],checkedChunk->verts,checkedChunk->tris,checkedChunk->UV0,checkedChunk->UV_Biome
-			);
-			delete checkedChunk;
-		}
-		threadMap.Empty();
-		threads.Empty();
-		meshGenerator->MarkCollisionDirty();
-	
+		return BiomeDeform(vert, EBiomeType::STD) * 2 + 10;
+	}
+	case EBiomeType::PLAINS:
+	{
+		return BiomeDeform(vert, EBiomeType::STD) + 40;
+	}
+	case EBiomeType::MOUNTAINS:
+	{
+		return BiomeDeform(vert, EBiomeType::STD) + 1000 + (USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X, vert.Y, 2.3f, 0.6f, 3, 1, true)) * 500;
+	}
+	case EBiomeType::PEAKS:
+	{
+		return BiomeDeform(vert, EBiomeType::MOUNTAINS) + 1000 + (USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X * 2, vert.Y * 2, 2.3f, 0.6f, 3, 1, true)) * 500;
+	}
+	case EBiomeType::STD:
+	{
+		return USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X * 16, vert.Y * 16, 2.3f, 0.6f, 3, 1, true) * 8;
+	}
+	default:
+		return 0;
+	}
+}
 
+
+
+
+
+float AProceduralTerrainGenerator::MapBiome(FVector2D pos, float biome)
+{
+	if (biome <= 0.12f)
+	{
+		return WeightInterpolation(BiomeDeform(pos, EBiomeType::SEA), 0.f, BiomeDeform(pos, EBiomeType::BEACH), 0.12f, biome);
+	}
+	else if (biome <= 0.5f)
+	{
+		return WeightInterpolation(BiomeDeform(pos, EBiomeType::BEACH), 0.12f, BiomeDeform(pos, EBiomeType::PLAINS), 0.5f, biome);
+	}
+	else if (biome <= 0.9f)
+	{
+		return WeightInterpolation(BiomeDeform(pos, EBiomeType::PLAINS), 0.5f, BiomeDeform(pos, EBiomeType::MOUNTAINS), 0.9f, biome);
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Not Every Chunk Loaded, %d / %d"),count, pendingChunks.Num());
+		return WeightInterpolation(BiomeDeform(pos, EBiomeType::MOUNTAINS), 0.9f, BiomeDeform(pos, EBiomeType::PEAKS), 1.f, biome);
 	}
 
+}
+int32 AProceduralTerrainGenerator::FindFirstFreeInt(TArray<int32> ints)
+{
+	int32 i = 0;
+	while (ints.Contains(i))i++;
+	return i;
+}
+void AProceduralTerrainGenerator::Init()
+{
+	FRuntimeMeshCollisionSettings settings;
+	settings.bUseComplexAsSimple = true;
+	settings.bUseAsyncCooking = true;
+	meshGenerator->SetCollisionSettings(settings);
+	meshGenerator->EnableNormalTangentGeneration();
+	meshGenerator->RemoveAllSectionsForLOD(0);
+	ChunkMap.Empty();
+	bRun = true;	
+}
+void AProceduralTerrainGenerator::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	meshGenerator->DisableNormalTangentGeneration();
 
 }
+AActor* AProceduralTerrainGenerator::GetActorOnPoint(FVector& loc, int32 vertIndex, float biome)
+{
+	if(vertIndex % chunkResolution != 0 && vertIndex / chunkResolution != 0)	
+		for(int i = 0;i<structurePlacement.Num();i++)
+	{
+		FStructurePlacementData& structure = structurePlacement[i];
+		if
+			(
+				USimplexNoiseBPLibrary::SimplexNoiseInRange2D(loc.X,loc.Y,0,1) <= structure.PlacementCurve->GetFloatValue(biome)
 
+				&&
+
+				vertIndex % structure.step == 0
+
+			)
+			return GetWorld()->SpawnActor<AActor>(structure.structureClass.Get(), loc, FRotator(0 , vertIndex % 360, 0));
+	}
+	return nullptr;
+}
 

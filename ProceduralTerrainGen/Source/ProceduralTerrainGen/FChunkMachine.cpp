@@ -79,29 +79,7 @@ uint32 FChunkMachine::Run()
 
 
 	}
-	//UKismetProceduralMeshLibrary::CalculateTangentsForMesh(verts, tris, UV0, normals, tangents);
 
-
-	//usuwanie granic
-	for (int i = verts.Num() - 1; i >= 0; i--)
-	{ //Je¿eli punkt znajduje siê na granicy chunku, usuñ go i wszystkie jego dane w innych arrayach
-
-		if (i % (chunkResolution + 2) == 0 || i % (chunkResolution + 2) == chunkResolution + 1
-			|| i / (chunkResolution + 2) == 0 || i / (chunkResolution + 2) == chunkResolution + 1)
-		{
-			verts.RemoveAt(i);
-			UV0.RemoveAt(i);
-			UV_Biome.RemoveAt(i);
-			/*
-			tangents.RemoveAt(i);
-			normals.RemoveAt(i);
-			*/
-
-
-
-
-		}
-	}
 
 	TArray<FVector> emptyVector;
 	UKismetProceduralMeshLibrary::CreateGridMeshWelded(chunkResolution, chunkResolution, tris, emptyVector, UV0, step);

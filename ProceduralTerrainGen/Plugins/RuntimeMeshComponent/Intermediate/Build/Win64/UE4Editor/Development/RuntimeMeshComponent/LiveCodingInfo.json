@@ -11,7 +11,6 @@
 			"RuntimeMeshProviderModifiers.cpp.obj",
 			"RuntimeMeshProviderPlane.cpp.obj",
 			"RuntimeMeshProviderSphere.cpp.obj",
-			"RuntimeMeshProviderStatic.cpp.obj",
 			"RuntimeMeshProviderStaticMesh.cpp.obj",
 			"RuntimeMesh.cpp.obj",
 			"RuntimeMeshActor.cpp.obj",
@@ -23,13 +22,14 @@
 			"RuntimeMeshComponentSettings.cpp.obj",
 			"RuntimeMeshCore.cpp.obj",
 			"RuntimeMeshModifier.cpp.obj",
-			"RuntimeMeshProvider.cpp.obj",
 			"RuntimeMeshProviderTargetInterface.cpp.obj",
 			"RuntimeMeshProxy.cpp.obj",
 			"RuntimeMeshRendering.cpp.obj",
 			"RuntimeMeshSectionProxy.cpp.obj",
 			"RuntimeMeshSlicer.cpp.obj",
-			"RuntimeMeshStaticMeshConverter.cpp.obj"
+			"RuntimeMeshStaticMeshConverter.cpp.obj",
+			"RuntimeMeshProviderStatic.cpp.obj",
+			"RuntimeMeshProvider.cpp.obj"
 		],
 		"Module.RuntimeMeshComponent.gen.1_of_4.cpp.obj": [
 			"RuntimeMesh.gen.cpp.obj",

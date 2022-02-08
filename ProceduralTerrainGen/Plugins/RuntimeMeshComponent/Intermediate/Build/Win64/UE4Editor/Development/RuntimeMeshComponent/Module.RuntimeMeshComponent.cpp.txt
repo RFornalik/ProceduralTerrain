@@ -52,7 +52,6 @@ C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/Runt
 C:\Users\rufus\Documents\ProceduralTerrainDemo\ProceduralTerrainGen\Plugins\RuntimeMeshComponent\Source\RuntimeMeshComponent\Public\Providers/RuntimeMeshProviderSphere.h
 C:\Users\rufus\Documents\ProceduralTerrainDemo\ProceduralTerrainGen\Plugins\RuntimeMeshComponent\Intermediate\Build\Win64\UE4Editor\Inc\RuntimeMeshComponent\RuntimeMeshProviderSphere.generated.h
 C:\Users\rufus\Documents\ProceduralTerrainDemo\ProceduralTerrainGen\Plugins\RuntimeMeshComponent\Source\RuntimeMeshComponent\Public\RuntimeMeshComponentPlugin.h
-C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/Providers/RuntimeMeshProviderStatic.cpp
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/Providers/RuntimeMeshProviderStaticMesh.cpp
 C:\Users\rufus\Documents\ProceduralTerrainDemo\ProceduralTerrainGen\Plugins\RuntimeMeshComponent\Source\RuntimeMeshComponent\Public\Providers/RuntimeMeshProviderStaticMesh.h
 C:\Users\rufus\Documents\ProceduralTerrainDemo\ProceduralTerrainGen\Plugins\RuntimeMeshComponent\Source\RuntimeMeshComponent\Public\RuntimeMeshStaticMeshConverter.h
@@ -353,7 +352,6 @@ D:\Games\UE_4.26\Engine\Shaders\Shared\RayTracingDefinitions.h
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshComponentSettings.cpp
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshCore.cpp
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshModifier.cpp
-C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshProvider.cpp
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshProviderTargetInterface.cpp
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshProxy.cpp
 C:/Users/rufus/Documents/ProceduralTerrainDemo/ProceduralTerrainGen/Plugins/RuntimeMeshComponent/Source/RuntimeMeshComponent/Private/RuntimeMeshRendering.cpp

@@ -42,7 +42,6 @@ URuntimeMeshProvider::URuntimeMeshProvider()
 	: GCAnchor(this)
 	, bIsBound(false)
 {
-
 }
 
 FRuntimeMeshProviderWeakRef URuntimeMeshProvider::GetReference()
