@@ -59,6 +59,43 @@ struct FStructurePlacementData
 		UCurveFloat* PlacementCurve;
 
 };
+USTRUCT()
+struct FQueuedActor
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, Category = "Properties")
+		UClass* StructClass;
+	UPROPERTY(EditAnywhere, Category = "Properties")
+		FVector Location;
+	UPROPERTY(EditAnywhere, Category = "Properties")
+		FRotator Rotation;
+	UPROPERTY(EditAnywhere, Category = "Properties")
+		FVector Scale;
+	UPROPERTY(EditAnywhere, Category = "Properties")
+		FIntPoint Chunk;
+
+	FQueuedActor()
+	{
+		StructClass = nullptr;
+	}
+	FQueuedActor(UClass* _class,FVector loc, FRotator rot,FIntPoint chunk)
+	{
+		StructClass = _class;
+		Location = loc;
+		Rotation = rot;
+		Chunk = chunk;
+		Scale = FVector(1, 1, 1);
+	}
+	FQueuedActor(UClass* _class, FVector loc, FRotator rot,FVector scale, FIntPoint chunk)
+	{
+		StructClass = _class;
+		Location = loc;
+		Rotation = rot;
+		Chunk = chunk;
+		Scale = scale;
+	}
+
+};
 
 UCLASS()
 class PROCEDURALTERRAINGEN_API AProceduralTerrainGenerator : public AActor
@@ -83,8 +120,16 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Properties")
 		int32 noiseSeed = 0;
 	UPROPERTY(EditAnywhere, Category = "Properties")
+		int32 spawnSpeed = 20;
+	UPROPERTY(EditAnywhere, Category = "Properties")
 		TArray<FStructurePlacementData> structurePlacement;
+	UPROPERTY(EditAnywhere, Category = "Properties")
+		TSubclassOf<AActor> WaterBodyClass;
 	bool bRun = false;
+	UPROPERTY()
+		TArray<AActor*> actorsToDestroy;
+	UPROPERTY()
+		TArray<FQueuedActor> actorsToAdd;
 
 	//DEBUG
 	UPROPERTY(VisibleAnywhere, Category = "Debug")
@@ -146,5 +191,5 @@ private:
 	static float MapBiome(FVector2D pos, float biome);
 	static float WeightInterpolation(float A, float valueA, float B, float valueB, float alpha);
 	static int32 FindFirstFreeInt(TArray<int32> ints);
-	AActor* GetActorOnPoint(FVector& loc, int32 vertIndex, float biome);
+	void GetActorOnPoint(FVector& loc, int32 vertIndex, float biome);
 };

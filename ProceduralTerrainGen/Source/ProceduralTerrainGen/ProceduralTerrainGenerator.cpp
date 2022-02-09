@@ -19,8 +19,6 @@
 // Sets default values
 AProceduralTerrainGenerator::AProceduralTerrainGenerator()
 {
-
-
 	PrimaryActorTick.bCanEverTick = true;
 	meshGenerator = CreateDefaultSubobject<URuntimeMeshComponentStatic>("mesh");
 
@@ -39,6 +37,28 @@ void AProceduralTerrainGenerator::Tick(float DeltaTime)
 
 	Super::Tick(DeltaTime);
 	if(bRun)TrackCharacter();
+	for (int32 i = 0; i < spawnSpeed && actorsToDestroy.Num()>0; i++)
+	{
+		actorsToDestroy[0]->Destroy();
+		actorsToDestroy.RemoveAt(0);
+	}
+	for(int32 i = 0; i<spawnSpeed && actorsToAdd.Num()>0; i++)
+	{
+		FQueuedActor& actorToAdd = actorsToAdd[0];
+		if (ChunkMap.Contains(actorToAdd.Chunk))
+		{
+			AActor* a = GetWorld()->SpawnActor<AActor>
+				(
+					actorToAdd.StructClass,
+					actorToAdd.Location, actorToAdd.Rotation);
+				a->SetActorScale3D(actorToAdd.Scale);
+				ChunkMap.Find(actorToAdd.Chunk)->placeableStructures.Add(a);
+		}
+		actorsToAdd.RemoveAt(0);
+	}
+		
+
+
 }
 
 
@@ -52,7 +72,7 @@ void AProceduralTerrainGenerator::OnConstruction(const FTransform& Transform)
 bool AProceduralTerrainGenerator::CreateChunk(FIntPoint coordinates)
 {
 	if (chunkResolution < 2) return false;
-
+	bool bCreateWater = false;
 	TArray<FVector> verts;
 	TArray<int32> tris;
 	TArray<FVector2D> UV0, UV_Biome;
@@ -65,27 +85,23 @@ bool AProceduralTerrainGenerator::CreateChunk(FIntPoint coordinates)
 	UV_Biome.Reserve(UV0.Num());
 	int32 x = coordinates.X * chunkSize;
 	int32 y = coordinates.Y * chunkSize;
-	AActor* placedActor;
 	for (int32 i = 0; i < verts.Num(); i++)
 	{
 		FVector& vert = verts[i];
 
-
-
 		vert.X += x;
 		vert.Y += y;
 
-
 		biome = USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X / biomeScale, vert.Y / biomeScale, 2.3f, 0.6f, 4, 1, true);
+
 		UV_Biome.Add(FVector2D(biome));
 
-		vert.Z += MapBiome(FVector2D(vert.X / noiseScale, vert.Y / noiseScale), biome) * heightScale;	
+		vert.Z += MapBiome(FVector2D(vert.X / noiseScale, vert.Y / noiseScale), biome) * heightScale;
+		if (!bCreateWater)bCreateWater = (vert.Z <= 0);
 
-		placedActor = GetActorOnPoint(vert, i, biome);
-		if (placedActor) structs.Add(placedActor);
-
+		GetActorOnPoint(vert, i, biome);
 	}
-
+	if (bCreateWater)actorsToAdd.Add(FQueuedActor(WaterBodyClass.Get(),FVector(x,y,0),FRotator(0,0,0),FVector(chunkSize/2,chunkSize/2,1),coordinates));
 	ReceiveChunk(coordinates, verts, tris, UV0, UV_Biome, structs);
 	return true;
 }
@@ -94,10 +110,7 @@ bool AProceduralTerrainGenerator::RemoveChunk(FIntPoint coordinates)
 {
 	if (!ChunkMap.Contains(coordinates)) return false;
 	FChunkData data = ChunkMap.FindRef(coordinates);
-	for(int i = 0;i<data.placeableStructures.Num();i++)
-	{
-		data.placeableStructures[i]->Destroy();
-	}
+	actorsToDestroy.Append(data.placeableStructures);
 	meshGenerator->GetProvider()->RemoveSection(0, data.meshSectionID);
 	ChunkMap.Remove(coordinates);
 
@@ -110,8 +123,6 @@ void AProceduralTerrainGenerator::ReceiveChunk(FIntPoint chunk, TArray<FVector>&
 {
 	int32 index = FindFirstFreeInt(meshGenerator->GetSectionIds(0));
 	TArray<FVector2D> emptyUVs = TArray<FVector2D>();
-	FIntPoint tmpDiff = chunk - lastCharChunk;
-	int32 dist = FMath::Abs(tmpDiff.X) + FMath::Abs(tmpDiff.Y);
 	FChunkData tmp = FChunkData(index, structures);
 	meshGenerator->CreateSectionFromComponents(0,index,0,verts,tris,TArray<FVector>(),UV0,UVB,emptyUVs,emptyUVs,TArray<FColor>(),TArray<FRuntimeMeshTangent>());
 
@@ -149,10 +160,6 @@ void AProceduralTerrainGenerator::TrackCharacter()
 			for(int i = 0; i<keys.Num();i++)
 			{
 				if (!chunksToAdd.Contains(keys[i])) RemoveChunk(keys[i]);
-				else
-				{
-					FIntPoint tmpDiff = keys[i] - charChunk;
-				}
 			}
 
 			for(int i = 0;i< chunksToAdd.Num();i++)
@@ -243,7 +250,7 @@ void AProceduralTerrainGenerator::Init()
 	settings.bUseComplexAsSimple = true;
 	settings.bUseAsyncCooking = true;
 	meshGenerator->SetCollisionSettings(settings);
-	meshGenerator->EnableNormalTangentGeneration();
+	meshGenerator->DisableNormalTangentGeneration();
 	meshGenerator->RemoveAllSectionsForLOD(0);
 	ChunkMap.Empty();
 	bRun = true;	
@@ -254,7 +261,7 @@ void AProceduralTerrainGenerator::EndPlay(const EEndPlayReason::Type EndPlayReas
 	meshGenerator->DisableNormalTangentGeneration();
 
 }
-AActor* AProceduralTerrainGenerator::GetActorOnPoint(FVector& loc, int32 vertIndex, float biome)
+void AProceduralTerrainGenerator::GetActorOnPoint(FVector& loc, int32 vertIndex, float biome)
 {
 	if(vertIndex % chunkResolution != 0 && vertIndex / chunkResolution != 0)	
 		for(int i = 0;i<structurePlacement.Num();i++)
@@ -269,8 +276,19 @@ AActor* AProceduralTerrainGenerator::GetActorOnPoint(FVector& loc, int32 vertInd
 				vertIndex % structure.step == 0
 
 			)
-			return GetWorld()->SpawnActor<AActor>(structure.structureClass.Get(), loc, FRotator(0 , vertIndex % 360, 0));
+		{
+			actorsToAdd.Add
+			(
+				FQueuedActor
+				(
+				structure.structureClass.Get(),
+				loc,
+				FRotator(0,vertIndex%360,0),
+				FIntPoint(loc.X / chunkSize, loc.Y / chunkSize)
+				)
+			);
+			return;
+		}
 	}
-	return nullptr;
-}
 
+}
