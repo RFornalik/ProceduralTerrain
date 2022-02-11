@@ -121,6 +121,8 @@ public:
 		int32 noiseSeed = 0;
 	UPROPERTY(EditAnywhere, Category = "Properties")
 		int32 spawnSpeed = 20;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Properties")
+		int32 renderDistanceInChunks = 2;
 	UPROPERTY(EditAnywhere, Category = "Properties")
 		TArray<FStructurePlacementData> structurePlacement;
 	UPROPERTY(EditAnywhere, Category = "Properties")
@@ -142,8 +144,7 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Rendering")
 		class URuntimeMeshComponentStatic* meshGenerator;
 
-	UPROPERTY(EditAnywhere, Category = "Rendering")
-		uint32 renderDistanceInChunks=2;
+
 	
 	
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Properties")
