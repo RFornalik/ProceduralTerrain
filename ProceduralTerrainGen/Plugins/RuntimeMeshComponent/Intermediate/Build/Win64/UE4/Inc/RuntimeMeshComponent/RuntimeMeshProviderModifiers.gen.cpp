@@ -121,11 +121,11 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderModifiers() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Modifiers_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Modifiers_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Modifiers;
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Modifiers_Inner;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -146,16 +146,16 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderModifiers() {}
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderModifiers.h" },
 	};
 #endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers_Inner = { "Modifiers", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_URuntimeMeshModifier_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderModifiers.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers = { "Modifiers", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderModifiers, Modifiers), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers_Inner = { "Modifiers", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_URuntimeMeshModifier_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::NewProp_Modifiers,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_URuntimeMeshProviderModifiers_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<URuntimeMeshProviderModifiers>::IsAbstract,
@@ -184,7 +184,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderModifiers() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshProviderModifiers, 145121272);
+	IMPLEMENT_CLASS(URuntimeMeshProviderModifiers, 873621729);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshProviderModifiers>()
 	{
 		return URuntimeMeshProviderModifiers::StaticClass();

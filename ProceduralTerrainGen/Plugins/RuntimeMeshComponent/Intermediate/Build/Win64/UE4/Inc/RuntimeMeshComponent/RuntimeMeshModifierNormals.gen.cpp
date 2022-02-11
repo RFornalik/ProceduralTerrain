@@ -43,24 +43,24 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshModifierNormals() {}
 			FRuntimeMeshRenderableMeshData MeshData;
 			bool bInComputeSmoothNormals;
 		};
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_MeshData;
 		static void NewProp_bInComputeSmoothNormals_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bInComputeSmoothNormals;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_MeshData;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_MeshData = { "MeshData", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshModifierNormals_eventCalculateNormalsTangents_Parms, MeshData), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_bInComputeSmoothNormals_SetBit(void* Obj)
 	{
 		((RuntimeMeshModifierNormals_eventCalculateNormalsTangents_Parms*)Obj)->bInComputeSmoothNormals = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_bInComputeSmoothNormals = { "bInComputeSmoothNormals", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshModifierNormals_eventCalculateNormalsTangents_Parms), &Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_bInComputeSmoothNormals_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_MeshData = { "MeshData", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshModifierNormals_eventCalculateNormalsTangents_Parms, MeshData), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_bInComputeSmoothNormals,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_MeshData,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::NewProp_bInComputeSmoothNormals,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents_Statics::Function_MetaDataParams[] = {
@@ -104,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshModifierNormals() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_URuntimeMeshModifierNormals_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents, "CalculateNormalsTangents" }, // 1798533073
+		{ &Z_Construct_UFunction_URuntimeMeshModifierNormals_CalculateNormalsTangents, "CalculateNormalsTangents" }, // 4267179122
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshModifierNormals_Statics::Class_MetaDataParams[] = {
@@ -157,7 +157,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshModifierNormals() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshModifierNormals, 114252792);
+	IMPLEMENT_CLASS(URuntimeMeshModifierNormals, 3329702961);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshModifierNormals>()
 	{
 		return URuntimeMeshModifierNormals::StaticClass();

@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define RUNTIMEMESHCOMPONENT_RuntimeMeshCore_generated_h
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMeshCore_h_112_GENERATED_BODY \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMeshCore_h_112_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics; \
 	RUNTIMEMESHCOMPONENT_API static class UScriptStruct* StaticStruct();
 
@@ -21,7 +21,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> RUNTIMEMESHCOMPONENT_API UScriptStruct* StaticStruct<struct FRuntimeMeshTangent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMeshCore_h
+#define CURRENT_FILE_ID ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMeshCore_h
 
 
 #define FOREACH_ENUM_ERUNTIMEMESHTHREADINGPRIORITY(op) \

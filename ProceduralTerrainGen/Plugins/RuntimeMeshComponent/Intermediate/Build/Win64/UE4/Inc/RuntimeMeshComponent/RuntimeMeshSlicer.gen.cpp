@@ -18,9 +18,9 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshSlicer_NoRegister();
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshSlicer();
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
-	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshComponent_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FPlane();
 // End Cross Module References
@@ -38,7 +38,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 		return ERuntimeMeshSliceCapOption_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ERuntimeMeshSliceCapOption(ERuntimeMeshSliceCapOption_StaticEnum, TEXT("/Script/RuntimeMeshComponent"), TEXT("ERuntimeMeshSliceCapOption"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption_Hash() { return 188424718U; }
+	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption_Hash() { return 1479084390U; }
 	UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption()
 	{
 #if WITH_HOT_RELOAD
@@ -78,6 +78,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -136,58 +137,58 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 			ERuntimeMeshSliceCapOption CapOption;
 			UMaterialInterface* CapMaterial;
 		};
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CapMaterial;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CapOption;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CapOption_Underlying;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OutOtherHalfRuntimeMesh_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OutOtherHalfRuntimeMesh;
-		static void NewProp_bCreateOtherHalf_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCreateOtherHalf;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PlaneNormal;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PlanePosition;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InRuntimeMesh_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InRuntimeMesh;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PlanePosition;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PlaneNormal;
+		static void NewProp_bCreateOtherHalf_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCreateOtherHalf;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OutOtherHalfRuntimeMesh_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OutOtherHalfRuntimeMesh;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CapOption_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CapOption;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CapMaterial;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapMaterial = { "CapMaterial", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, CapMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption = { "CapOption", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, CapOption), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh_MetaData[] = {
-		{ "EditInline", "true" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh = { "OutOtherHalfRuntimeMesh", nullptr, (EPropertyFlags)0x0010000000080180, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, OutOtherHalfRuntimeMesh), Z_Construct_UClass_URuntimeMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh_MetaData)) };
-	void Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf_SetBit(void* Obj)
-	{
-		((RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms*)Obj)->bCreateOtherHalf = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf = { "bCreateOtherHalf", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms), &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlaneNormal = { "PlaneNormal", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, PlaneNormal), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlanePosition = { "PlanePosition", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, PlanePosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_InRuntimeMesh_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_InRuntimeMesh = { "InRuntimeMesh", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, InRuntimeMesh), Z_Construct_UClass_URuntimeMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_InRuntimeMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_InRuntimeMesh_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlanePosition = { "PlanePosition", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, PlanePosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlaneNormal = { "PlaneNormal", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, PlaneNormal), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf_SetBit(void* Obj)
+	{
+		((RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms*)Obj)->bCreateOtherHalf = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf = { "bCreateOtherHalf", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms), &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf_SetBit, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh = { "OutOtherHalfRuntimeMesh", nullptr, (EPropertyFlags)0x0010000000080180, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, OutOtherHalfRuntimeMesh), Z_Construct_UClass_URuntimeMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption = { "CapOption", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, CapOption), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapMaterial = { "CapMaterial", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMesh_Parms, CapMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapMaterial,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlaneNormal,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlanePosition,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_InRuntimeMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlanePosition,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_PlaneNormal,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_bCreateOtherHalf,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_OutOtherHalfRuntimeMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapOption,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::NewProp_CapMaterial,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh_Statics::Function_MetaDataParams[] = {
@@ -221,61 +222,61 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 			FRuntimeMeshRenderableMeshData NewDestinationSectionCap;
 			bool ReturnValue;
 		};
-		static void NewProp_ReturnValue_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewDestinationSectionCap;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_DestinationSection;
-		static void NewProp_bCreateDestination_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCreateDestination;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewSourceSectionCap;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewSourceSection;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CapOption;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CapOption_Underlying;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SourceSection;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlicePlane_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SlicePlane;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SourceSection;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CapOption_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CapOption;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewSourceSection;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewSourceSectionCap;
+		static void NewProp_bCreateDestination_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCreateDestination;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_DestinationSection;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewDestinationSectionCap;
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	void Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue_SetBit(void* Obj)
-	{
-		((RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms*)Obj)->ReturnValue = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms), &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewDestinationSectionCap = { "NewDestinationSectionCap", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, NewDestinationSectionCap), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_DestinationSection = { "DestinationSection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, DestinationSection), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
-	void Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination_SetBit(void* Obj)
-	{
-		((RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms*)Obj)->bCreateDestination = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination = { "bCreateDestination", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms), &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSectionCap = { "NewSourceSectionCap", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, NewSourceSectionCap), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSection = { "NewSourceSection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, NewSourceSection), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption = { "CapOption", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, CapOption), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SourceSection = { "SourceSection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, SourceSection), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SlicePlane_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SlicePlane = { "SlicePlane", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, SlicePlane), Z_Construct_UScriptStruct_FPlane, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SlicePlane_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SlicePlane_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SourceSection = { "SourceSection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, SourceSection), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption = { "CapOption", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, CapOption), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshSliceCapOption, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSection = { "NewSourceSection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, NewSourceSection), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSectionCap = { "NewSourceSectionCap", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, NewSourceSectionCap), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination_SetBit(void* Obj)
+	{
+		((RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms*)Obj)->bCreateDestination = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination = { "bCreateDestination", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms), &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_DestinationSection = { "DestinationSection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, DestinationSection), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewDestinationSectionCap = { "NewDestinationSectionCap", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms, NewDestinationSectionCap), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshSlicer_eventSliceRuntimeMeshData_Parms), &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewDestinationSectionCap,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_DestinationSection,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSectionCap,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSection,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SlicePlane,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SourceSection,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_SlicePlane,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_CapOption,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSection,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewSourceSectionCap,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_bCreateDestination,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_DestinationSection,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_NewDestinationSectionCap,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData_Statics::Function_MetaDataParams[] = {
@@ -314,8 +315,8 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_URuntimeMeshSlicer_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh, "SliceRuntimeMesh" }, // 3967298253
-		{ &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData, "SliceRuntimeMeshData" }, // 2501001874
+		{ &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMesh, "SliceRuntimeMesh" }, // 1659701338
+		{ &Z_Construct_UFunction_URuntimeMeshSlicer_SliceRuntimeMeshData, "SliceRuntimeMeshData" }, // 2189070839
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshSlicer_Statics::Class_MetaDataParams[] = {
@@ -350,7 +351,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshSlicer() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshSlicer, 1433615736);
+	IMPLEMENT_CLASS(URuntimeMeshSlicer, 2002348243);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshSlicer>()
 	{
 		return URuntimeMeshSlicer::StaticClass();

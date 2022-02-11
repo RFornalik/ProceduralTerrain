@@ -35,7 +35,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 		return ERuntimeMeshThreadingPriority_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ERuntimeMeshThreadingPriority(ERuntimeMeshThreadingPriority_StaticEnum, TEXT("/Script/RuntimeMeshComponent"), TEXT("ERuntimeMeshThreadingPriority"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshThreadingPriority_Hash() { return 3495185099U; }
+	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshThreadingPriority_Hash() { return 1710540981U; }
 	UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshThreadingPriority()
 	{
 #if WITH_HOT_RELOAD
@@ -76,6 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -98,7 +99,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 		return ERuntimeMeshCollisionCookingMode_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ERuntimeMeshCollisionCookingMode(ERuntimeMeshCollisionCookingMode_StaticEnum, TEXT("/Script/RuntimeMeshComponent"), TEXT("ERuntimeMeshCollisionCookingMode"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionCookingMode_Hash() { return 1151936535U; }
+	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionCookingMode_Hash() { return 2694491098U; }
 	UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionCookingMode()
 	{
 #if WITH_HOT_RELOAD
@@ -137,6 +138,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -159,7 +161,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 		return ERuntimeMeshUpdateFrequency_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ERuntimeMeshUpdateFrequency(ERuntimeMeshUpdateFrequency_StaticEnum, TEXT("/Script/RuntimeMeshComponent"), TEXT("ERuntimeMeshUpdateFrequency"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency_Hash() { return 3704437204U; }
+	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency_Hash() { return 3535013171U; }
 	UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency()
 	{
 #if WITH_HOT_RELOAD
@@ -203,6 +205,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -225,7 +228,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 		return ERuntimeMeshMobility_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ERuntimeMeshMobility(ERuntimeMeshMobility_StaticEnum, TEXT("/Script/RuntimeMeshComponent"), TEXT("ERuntimeMeshMobility"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshMobility_Hash() { return 3226968951U; }
+	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshMobility_Hash() { return 3378700882U; }
 	UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshMobility()
 	{
 #if WITH_HOT_RELOAD
@@ -260,6 +263,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCore() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -297,14 +301,14 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TangentX_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TangentX;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bFlipTangentY_MetaData[];
 #endif
 		static void NewProp_bFlipTangentY_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bFlipTangentY;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TangentX_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TangentX;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -321,6 +325,15 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshTangent>();
 	}
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX_MetaData[] = {
+		{ "Category", "Tangent" },
+		{ "Comment", "/** Direction of X tangent for this vertex */" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCore.h" },
+		{ "ToolTip", "Direction of X tangent for this vertex" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX = { "TangentX", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshTangent, TangentX), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY_MetaData[] = {
 		{ "Category", "Tangent" },
 		{ "Comment", "/** Bool that indicates whether we should flip the Y tangent when we compute it using cross product */" },
@@ -333,18 +346,9 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		((FRuntimeMeshTangent*)Obj)->bFlipTangentY = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY = { "bFlipTangentY", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshTangent), &Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX_MetaData[] = {
-		{ "Category", "Tangent" },
-		{ "Comment", "/** Direction of X tangent for this vertex */" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCore.h" },
-		{ "ToolTip", "Direction of X tangent for this vertex" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX = { "TangentX", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshTangent, TangentX), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_TangentX,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::NewProp_bFlipTangentY,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshTangent_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -374,7 +378,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshTangent_Hash() { return 4293601413U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshTangent_Hash() { return 2618293894U; }
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)

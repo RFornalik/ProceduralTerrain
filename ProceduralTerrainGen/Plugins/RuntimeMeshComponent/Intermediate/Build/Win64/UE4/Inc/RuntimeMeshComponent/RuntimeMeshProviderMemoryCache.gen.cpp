@@ -112,7 +112,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderMemoryCache() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshProviderMemoryCache, 1996809830);
+	IMPLEMENT_CLASS(URuntimeMeshProviderMemoryCache, 3436709333);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshProviderMemoryCache>()
 	{
 		return URuntimeMeshProviderMemoryCache::StaticClass();

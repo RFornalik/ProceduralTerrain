@@ -17,20 +17,20 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshComponentStatic();
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshComponent();
 	UPackage* Z_Construct_UPackage__Script_RuntimeMeshComponent();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshSectionProperties();
-	RUNTIMEMESHCOMPONENT_API UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshTangent();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FLinearColor();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FLinearColor();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshTangent();
+	RUNTIMEMESHCOMPONENT_API UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionData();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FBoxSphereBounds();
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshProviderStatic_NoRegister();
-	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshModifierAdjacency_NoRegister();
-	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshModifierNormals_NoRegister();
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMesh_NoRegister();
+	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshModifierNormals_NoRegister();
+	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshModifierAdjacency_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(URuntimeMeshComponentStatic::execHasTessellationTriangleGenerationEnabled)
 	{
@@ -115,6 +115,15 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 		P_FINISH;
 		P_NATIVE_BEGIN;
 		*(FBoxSphereBounds*)Z_Param__Result=P_THIS->GetSectionBounds(Z_Param_LODIndex,Z_Param_SectionId);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(URuntimeMeshComponentStatic::execRemoveSection)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_LODIndex);
+		P_GET_PROPERTY(FIntProperty,Z_Param_SectionId);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->RemoveSection(Z_Param_LODIndex,Z_Param_SectionId);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(URuntimeMeshComponentStatic::execRemoveAllSectionsForLOD)
@@ -306,6 +315,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			{ "HasNormalTangentGenerationEnabled", &URuntimeMeshComponentStatic::execHasNormalTangentGenerationEnabled },
 			{ "HasTessellationTriangleGenerationEnabled", &URuntimeMeshComponentStatic::execHasTessellationTriangleGenerationEnabled },
 			{ "RemoveAllSectionsForLOD", &URuntimeMeshComponentStatic::execRemoveAllSectionsForLOD },
+			{ "RemoveSection", &URuntimeMeshComponentStatic::execRemoveSection },
 			{ "SetCollisionMesh", &URuntimeMeshComponentStatic::execSetCollisionMesh },
 			{ "SetCollisionSettings", &URuntimeMeshComponentStatic::execSetCollisionSettings },
 			{ "SetRenderableLODForCollision", &URuntimeMeshComponentStatic::execSetRenderableLODForCollision },
@@ -322,19 +332,19 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 LODIndex;
 			int32 SectionId;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventClearSection_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventClearSection_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventClearSection_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::NewProp_SectionId,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection_Statics::Function_MetaDataParams[] = {
@@ -362,41 +372,41 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			FRuntimeMeshSectionProperties SectionProperties;
 			FRuntimeMeshRenderableMeshData SectionData;
 		};
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionData_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SectionData;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionProperties_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SectionProperties;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionData_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SectionData;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData = { "SectionData", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, SectionData), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionProperties_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionProperties = { "SectionProperties", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, SectionProperties), Z_Construct_UScriptStruct_FRuntimeMeshSectionProperties, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionProperties_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionProperties_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData = { "SectionData", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSection_Blueprint_Parms, SectionData), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionProperties,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionProperties,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::NewProp_SectionData,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint_Statics::Function_MetaDataParams[] = {
@@ -434,162 +444,162 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			ERuntimeMeshUpdateFrequency UpdateFrequency;
 			bool bCreateCollision;
 		};
-		static void NewProp_bCreateCollision_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCreateCollision;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_UpdateFrequency;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_UpdateFrequency_Underlying;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Tangents_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Tangents;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Tangents_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VertexColors_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_VertexColors;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_VertexColors_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV3_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV3;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV3_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV2_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV2;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV2_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV1_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV1;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV1_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV0_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV0;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV0_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Normals_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Normals;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Normals_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Triangles;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Triangles_Inner;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaterialSlot;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vertices_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Vertices;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices_Inner;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaterialSlot;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionIndex;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Triangles_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Triangles;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Normals_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Normals_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Normals;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV0_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV0_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV0;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV1_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV1_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV1;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV2_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV2_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV2;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV3_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV3_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV3;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_VertexColors_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VertexColors_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_VertexColors;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Tangents_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Tangents_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Tangents;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_UpdateFrequency_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_UpdateFrequency;
+		static void NewProp_bCreateCollision_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCreateCollision;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	void Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision_SetBit(void* Obj)
-	{
-		((RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms*)Obj)->bCreateCollision = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision = { "bCreateCollision", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms), &Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency = { "UpdateFrequency", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UpdateFrequency), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents = { "Tangents", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Tangents), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_Inner = { "Tangents", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshTangent, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors = { "VertexColors", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, VertexColors), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_Inner = { "VertexColors", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3 = { "UV3", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV3), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_Inner = { "UV3", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2 = { "UV2", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV2), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_Inner = { "UV2", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1 = { "UV1", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV1), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_Inner = { "UV1", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0 = { "UV0", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV0), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_Inner = { "UV0", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals = { "Normals", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Normals), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_Inner = { "Normals", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Triangles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_Inner = { "Triangles", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_SectionIndex = { "SectionIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, SectionIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_MaterialSlot = { "MaterialSlot", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, MaterialSlot), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_Inner = { "Vertices", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices = { "Vertices", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Vertices), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_Inner = { "Vertices", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_MaterialSlot = { "MaterialSlot", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, MaterialSlot), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_SectionIndex = { "SectionIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, SectionIndex), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_Inner = { "Triangles", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Triangles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_Inner = { "Normals", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals = { "Normals", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Normals), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_Inner = { "UV0", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0 = { "UV0", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV0), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_Inner = { "UV1", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1 = { "UV1", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV1), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_Inner = { "UV2", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2 = { "UV2", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV2), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_Inner = { "UV3", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3 = { "UV3", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UV3), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_Inner = { "VertexColors", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors = { "VertexColors", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, VertexColors), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_Inner = { "Tangents", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshTangent, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents = { "Tangents", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, Tangents), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency = { "UpdateFrequency", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms, UpdateFrequency), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshUpdateFrequency, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision_SetBit(void* Obj)
+	{
+		((RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms*)Obj)->bCreateCollision = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision = { "bCreateCollision", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshComponentStatic_eventCreateSectionFromComponents_Parms), &Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision_SetBit, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_MaterialSlot,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_SectionIndex,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_SectionIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_MaterialSlot,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Vertices,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Triangles,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Normals,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV0,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV1,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV2,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UV3,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_VertexColors,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_Tangents,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_UpdateFrequency,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::NewProp_bCreateCollision,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents_Statics::Function_MetaDataParams[] = {
@@ -668,27 +678,27 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			bool ReturnValue;
 		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static void NewProp_ReturnValue_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventDoesSectionHaveValidMeshData_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventDoesSectionHaveValidMeshData_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 	{
 		((RuntimeMeshComponentStatic_eventDoesSectionHaveValidMeshData_Parms*)Obj)->ReturnValue = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshComponentStatic_eventDoesSectionHaveValidMeshData_Parms), &Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventDoesSectionHaveValidMeshData_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventDoesSectionHaveValidMeshData_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData_Statics::Function_MetaDataParams[] = {
@@ -825,19 +835,19 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 LODIndex;
 			int32 ReturnValue;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetLastSectionId_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetLastSectionId_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetLastSectionId_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::NewProp_ReturnValue,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId_Statics::Function_MetaDataParams[] = {
@@ -896,22 +906,22 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			FBoxSphereBounds ReturnValue;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionBounds_Parms, ReturnValue), Z_Construct_UScriptStruct_FBoxSphereBounds, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionBounds_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionBounds_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionBounds_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionBounds_Parms, ReturnValue), Z_Construct_UScriptStruct_FBoxSphereBounds, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds_Statics::Function_MetaDataParams[] = {
@@ -936,22 +946,22 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 LODIndex;
 			TArray<int32> ReturnValue;
 		};
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue_Inner;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionIds_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionIds_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionIds_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds_Statics::Function_MetaDataParams[] = {
@@ -977,22 +987,22 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			FRuntimeMeshSectionProperties ReturnValue;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionProperties_Parms, ReturnValue), Z_Construct_UScriptStruct_FRuntimeMeshSectionProperties, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionProperties_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionProperties_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionProperties_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionProperties_Parms, ReturnValue), Z_Construct_UScriptStruct_FRuntimeMeshSectionProperties, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties_Statics::Function_MetaDataParams[] = {
@@ -1018,22 +1028,22 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			FRuntimeMeshRenderableMeshData ReturnValue;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderData_Parms, ReturnValue), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderData_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderData_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderData_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderData_Parms, ReturnValue), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData_Statics::Function_MetaDataParams[] = {
@@ -1059,22 +1069,22 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			FRuntimeMeshRenderableMeshData ReturnValue;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderDataAndClear_Parms, ReturnValue), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderDataAndClear_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderDataAndClear_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderDataAndClear_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionRenderDataAndClear_Parms, ReturnValue), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear_Statics::Function_MetaDataParams[] = {
@@ -1098,19 +1108,19 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 		{
 			TSet<int32> ReturnValue;
 		};
-		static const UE4CodeGen_Private::FSetPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue_ElementProp;
+		static const UE4CodeGen_Private::FSetPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FSetPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionsForMeshCollision_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::NewProp_ReturnValue_ElementProp = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FSetPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventGetSectionsForMeshCollision_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::NewProp_ReturnValue,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::NewProp_ReturnValue_ElementProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision_Statics::Function_MetaDataParams[] = {
@@ -1270,6 +1280,43 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics
+	{
+		struct RuntimeMeshComponentStatic_eventRemoveSection_Parms
+		{
+			int32 LODIndex;
+			int32 SectionId;
+		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventRemoveSection_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventRemoveSection_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::NewProp_SectionId,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::Function_MetaDataParams[] = {
+		{ "Category", "RuntimeMeshStatic|Mesh" },
+		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URuntimeMeshComponentStatic, nullptr, "RemoveSection", nullptr, nullptr, sizeof(RuntimeMeshComponentStatic_eventRemoveSection_Parms), Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_URuntimeMeshComponentStatic_SetCollisionMesh_Statics
 	{
 		struct RuntimeMeshComponentStatic_eventSetCollisionMesh_Parms
@@ -1392,24 +1439,24 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			bool bCollisionEnabled;
 		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static void NewProp_bCollisionEnabled_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCollisionEnabled;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventSetRenderableSectionAffectsCollision_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled_SetBit(void* Obj)
 	{
 		((RuntimeMeshComponentStatic_eventSetRenderableSectionAffectsCollision_Parms*)Obj)->bCollisionEnabled = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled = { "bCollisionEnabled", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshComponentStatic_eventSetRenderableSectionAffectsCollision_Parms), &Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventSetRenderableSectionAffectsCollision_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision_Statics::Function_MetaDataParams[] = {
@@ -1435,30 +1482,30 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			int32 SectionId;
 			FRuntimeMeshRenderableMeshData SectionData;
 		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionData_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SectionData;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSection_Blueprint_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSection_Blueprint_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionData_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionData = { "SectionData", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSection_Blueprint_Parms, SectionData), Z_Construct_UScriptStruct_FRuntimeMeshRenderableMeshData, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionData_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionData_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSection_Blueprint_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSection_Blueprint_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionData,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionId,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::NewProp_SectionData,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint_Statics::Function_MetaDataParams[] = {
@@ -1493,145 +1540,145 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 			TArray<FLinearColor> VertexColors;
 			TArray<FRuntimeMeshTangent> Tangents;
 		};
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Tangents_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Tangents;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Tangents_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VertexColors_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_VertexColors;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_VertexColors_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV3_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV3;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV3_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV2_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV2;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV2_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV1_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV1;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV1_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV0_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV0;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV0_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Normals_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Normals;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Normals_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Triangles;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Triangles_Inner;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionIndex;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vertices_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Vertices;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices_Inner;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionIndex;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODIndex;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Triangles_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Triangles;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Normals_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Normals_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Normals;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV0_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV0_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV0;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV1_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV1_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV1;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV2_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV2_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV2;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_UV3_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_UV3_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_UV3;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_VertexColors_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VertexColors_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_VertexColors;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Tangents_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Tangents_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Tangents;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents = { "Tangents", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Tangents), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_Inner = { "Tangents", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshTangent, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors = { "VertexColors", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, VertexColors), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_Inner = { "VertexColors", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3 = { "UV3", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV3), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_Inner = { "UV3", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2 = { "UV2", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV2), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_Inner = { "UV2", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1 = { "UV1", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV1), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_Inner = { "UV1", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0 = { "UV0", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV0), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_Inner = { "UV0", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals = { "Normals", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Normals), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_Inner = { "Normals", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Triangles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_Inner = { "Triangles", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_SectionIndex = { "SectionIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, SectionIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_Inner = { "Vertices", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices = { "Vertices", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Vertices), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_Inner = { "Vertices", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_SectionIndex = { "SectionIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, SectionIndex), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_LODIndex = { "LODIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, LODIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_Inner = { "Triangles", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Triangles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_Inner = { "Normals", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals = { "Normals", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Normals), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_Inner = { "UV0", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0 = { "UV0", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV0), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_Inner = { "UV1", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1 = { "UV1", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV1), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_Inner = { "UV2", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2 = { "UV2", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV2), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_Inner = { "UV3", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3 = { "UV3", nullptr, (EPropertyFlags)0x0010040008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, UV3), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_Inner = { "VertexColors", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors = { "VertexColors", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, VertexColors), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_Inner = { "Tangents", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshTangent, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents = { "Tangents", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshComponentStatic_eventUpdateSectionFromComponents_Parms, Tangents), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_SectionIndex,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_LODIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_SectionIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Vertices,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Triangles,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Normals,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV0,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV1,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV2,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_UV3,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_VertexColors,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::NewProp_Tangents,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents_Statics::Function_MetaDataParams[] = {
@@ -1666,21 +1713,21 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AdjacencyModifier_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RuntimeMesh_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AdjacencyModifier;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NormalsModifier_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_NormalsModifier;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_RuntimeMesh;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StaticProvider_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StaticProvider;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RuntimeMesh_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NormalsModifier_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_RuntimeMesh;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_NormalsModifier;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AdjacencyModifier_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AdjacencyModifier;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -1690,34 +1737,35 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection, "ClearSection" }, // 3148534483
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint, "CreateSection_Blueprint" }, // 4129814728
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents, "CreateSectionFromComponents" }, // 2596977219
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_ClearSection, "ClearSection" }, // 3104336288
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSection_Blueprint, "CreateSection_Blueprint" }, // 530850419
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_CreateSectionFromComponents, "CreateSectionFromComponents" }, // 1108454545
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_DisableNormalTangentGeneration, "DisableNormalTangentGeneration" }, // 3065886971
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_DisableTessellationTrianglesGeneration, "DisableTessellationTrianglesGeneration" }, // 66183511
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData, "DoesSectionHaveValidMeshData" }, // 3476414890
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_DoesSectionHaveValidMeshData, "DoesSectionHaveValidMeshData" }, // 2095338050
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_EnabledTessellationTrianglesGeneration, "EnabledTessellationTrianglesGeneration" }, // 1001284622
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_EnableNormalTangentGeneration, "EnableNormalTangentGeneration" }, // 3880685264
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetCollisionMesh, "GetCollisionMesh" }, // 2135803782
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetCollisionSettings, "GetCollisionSettings" }, // 4229833592
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId, "GetLastSectionId" }, // 3470388195
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLastSectionId, "GetLastSectionId" }, // 3614775030
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetLODForMeshCollision, "GetLODForMeshCollision" }, // 625557015
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds, "GetSectionBounds" }, // 1970468513
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds, "GetSectionIds" }, // 3903710786
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties, "GetSectionProperties" }, // 2972358977
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData, "GetSectionRenderData" }, // 361128667
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear, "GetSectionRenderDataAndClear" }, // 919989757
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision, "GetSectionsForMeshCollision" }, // 975574304
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionBounds, "GetSectionBounds" }, // 3903420479
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionIds, "GetSectionIds" }, // 2878019030
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionProperties, "GetSectionProperties" }, // 4107245673
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderData, "GetSectionRenderData" }, // 1365064315
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionRenderDataAndClear, "GetSectionRenderDataAndClear" }, // 3130318952
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetSectionsForMeshCollision, "GetSectionsForMeshCollision" }, // 1689722753
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_GetStaticProvider, "GetStaticProvider" }, // 3485442068
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_HasNormalTangentGenerationEnabled, "HasNormalTangentGenerationEnabled" }, // 1301568921
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_HasTessellationTriangleGenerationEnabled, "HasTessellationTriangleGenerationEnabled" }, // 3497793359
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveAllSectionsForLOD, "RemoveAllSectionsForLOD" }, // 904307916
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_RemoveSection, "RemoveSection" }, // 2794001684
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_SetCollisionMesh, "SetCollisionMesh" }, // 532550776
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_SetCollisionSettings, "SetCollisionSettings" }, // 1441647957
 		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableLODForCollision, "SetRenderableLODForCollision" }, // 1007299290
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision, "SetRenderableSectionAffectsCollision" }, // 3028321970
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint, "UpdateSection_Blueprint" }, // 1380281591
-		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents, "UpdateSectionFromComponents" }, // 372748629
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_SetRenderableSectionAffectsCollision, "SetRenderableSectionAffectsCollision" }, // 3286779362
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSection_Blueprint, "UpdateSection_Blueprint" }, // 3745712393
+		{ &Z_Construct_UFunction_URuntimeMeshComponentStatic_UpdateSectionFromComponents, "UpdateSectionFromComponents" }, // 3094296657
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::Class_MetaDataParams[] = {
@@ -1731,24 +1779,6 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier = { "AdjacencyModifier", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, AdjacencyModifier), Z_Construct_UClass_URuntimeMeshModifierAdjacency_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier = { "NormalsModifier", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, NormalsModifier), Z_Construct_UClass_URuntimeMeshModifierNormals_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider = { "StaticProvider", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, StaticProvider), Z_Construct_UClass_URuntimeMeshProviderStatic_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_RuntimeMesh_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "BlueprintGetter", "GetRuntimeMesh" },
@@ -1758,11 +1788,29 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_RuntimeMesh = { "RuntimeMesh", nullptr, (EPropertyFlags)0x0041000000000015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, RuntimeMesh), Z_Construct_UClass_URuntimeMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_RuntimeMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_RuntimeMesh_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider = { "StaticProvider", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, StaticProvider), Z_Construct_UClass_URuntimeMeshProviderStatic_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier = { "NormalsModifier", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, NormalsModifier), Z_Construct_UClass_URuntimeMeshModifierNormals_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Components/RuntimeMeshComponentStatic.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier = { "AdjacencyModifier", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshComponentStatic, AdjacencyModifier), Z_Construct_UClass_URuntimeMeshModifierAdjacency_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_RuntimeMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_StaticProvider,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_NormalsModifier,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::NewProp_AdjacencyModifier,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_URuntimeMeshComponentStatic_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<URuntimeMeshComponentStatic>::IsAbstract,
@@ -1791,7 +1839,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponentStatic() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshComponentStatic, 2408367282);
+	IMPLEMENT_CLASS(URuntimeMeshComponentStatic, 517174998);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshComponentStatic>()
 	{
 		return URuntimeMeshComponentStatic::StaticClass();

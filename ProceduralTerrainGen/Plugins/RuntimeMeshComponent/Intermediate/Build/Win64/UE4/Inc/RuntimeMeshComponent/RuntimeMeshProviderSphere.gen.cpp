@@ -619,37 +619,37 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderSphere() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SphereMaterial_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLOD_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SphereMaterial;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LODMultiplier_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_LODMultiplier;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MinLongitudeSegments_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MinLongitudeSegments;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLongitudeSegments_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLongitudeSegments;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MinLatitudeSegments_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MinLatitudeSegments;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLatitudeSegments_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLatitudeSegments;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLOD;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SphereRadius_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SphereRadius;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLOD_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLatitudeSegments_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLOD;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLatitudeSegments;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MinLatitudeSegments_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MinLatitudeSegments;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLongitudeSegments_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLongitudeSegments;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MinLongitudeSegments_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MinLongitudeSegments;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LODMultiplier_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_LODMultiplier;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SphereMaterial_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SphereMaterial;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -683,59 +683,11 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderSphere() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial_MetaData[] = {
-		{ "BlueprintGetter", "GetSphereMaterial" },
-		{ "BlueprintSetter", "SetSphereMaterial" },
-		{ "Category", "RuntimeMesh|Providers|Sphere" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial = { "SphereMaterial", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, SphereMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier_MetaData[] = {
-		{ "BlueprintGetter", "GetLODMultiplier" },
-		{ "BlueprintSetter", "SetLODMultiplier" },
-		{ "Category", "RuntimeMesh|Providers|Sphere" },
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier = { "LODMultiplier", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, LODMultiplier), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments_MetaData[] = {
-		{ "BlueprintGetter", "GetMinLongitudeSegments" },
-		{ "BlueprintSetter", "SetMinLongitudeSegments" },
-		{ "Category", "RuntimeMesh|Providers|Sphere" },
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments = { "MinLongitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MinLongitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments_MetaData[] = {
-		{ "BlueprintGetter", "GetMaxLongitudeSegments" },
-		{ "BlueprintSetter", "SetMaxLongitudeSegments" },
-		{ "Category", "RuntimeMesh|Providers|Sphere" },
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments = { "MaxLongitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MaxLongitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments_MetaData[] = {
-		{ "BlueprintGetter", "GetMinLatitudeSegments" },
-		{ "BlueprintSetter", "SetMinLatitudeSegments" },
-		{ "Category", "RuntimeMesh|Providers|Sphere" },
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments = { "MinLatitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MinLatitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments_MetaData[] = {
-		{ "BlueprintGetter", "GetMaxLatitudeSegments" },
-		{ "BlueprintSetter", "SetMaxLatitudeSegments" },
-		{ "Category", "RuntimeMesh|Providers|Sphere" },
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments = { "MaxLatitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MaxLatitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD = { "MaxLOD", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MaxLOD), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereRadius_MetaData[] = {
 		{ "BlueprintGetter", "GetSphereRadius" },
@@ -746,20 +698,68 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderSphere() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereRadius = { "SphereRadius", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, SphereRadius), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereRadius_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments_MetaData[] = {
+		{ "BlueprintGetter", "GetMaxLatitudeSegments" },
+		{ "BlueprintSetter", "SetMaxLatitudeSegments" },
+		{ "Category", "RuntimeMesh|Providers|Sphere" },
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD = { "MaxLOD", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MaxLOD), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments = { "MaxLatitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MaxLatitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments_MetaData[] = {
+		{ "BlueprintGetter", "GetMinLatitudeSegments" },
+		{ "BlueprintSetter", "SetMinLatitudeSegments" },
+		{ "Category", "RuntimeMesh|Providers|Sphere" },
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments = { "MinLatitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MinLatitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments_MetaData[] = {
+		{ "BlueprintGetter", "GetMaxLongitudeSegments" },
+		{ "BlueprintSetter", "SetMaxLongitudeSegments" },
+		{ "Category", "RuntimeMesh|Providers|Sphere" },
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments = { "MaxLongitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MaxLongitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments_MetaData[] = {
+		{ "BlueprintGetter", "GetMinLongitudeSegments" },
+		{ "BlueprintSetter", "SetMinLongitudeSegments" },
+		{ "Category", "RuntimeMesh|Providers|Sphere" },
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments = { "MinLongitudeSegments", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, MinLongitudeSegments), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier_MetaData[] = {
+		{ "BlueprintGetter", "GetLODMultiplier" },
+		{ "BlueprintSetter", "SetLODMultiplier" },
+		{ "Category", "RuntimeMesh|Providers|Sphere" },
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier = { "LODMultiplier", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, LODMultiplier), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial_MetaData[] = {
+		{ "BlueprintGetter", "GetSphereMaterial" },
+		{ "BlueprintSetter", "SetSphereMaterial" },
+		{ "Category", "RuntimeMesh|Providers|Sphere" },
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderSphere.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial = { "SphereMaterial", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderSphere, SphereMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereRadius,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLOD,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereRadius,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLatitudeSegments,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLatitudeSegments,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MaxLongitudeSegments,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_MinLongitudeSegments,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_LODMultiplier,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::NewProp_SphereMaterial,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_URuntimeMeshProviderSphere_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<URuntimeMeshProviderSphere>::IsAbstract,
@@ -788,7 +788,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderSphere() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshProviderSphere, 2829076320);
+	IMPLEMENT_CLASS(URuntimeMeshProviderSphere, 1940378177);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshProviderSphere>()
 	{
 		return URuntimeMeshProviderSphere::StaticClass();

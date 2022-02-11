@@ -135,8 +135,6 @@ void AProceduralTerrainGenerator::TrackCharacter()
 {
 	if(trackedCharacter)
 	{
-
-
 		FIntPoint charChunk = FIntPoint(
 			(int32)trackedCharacter->GetActorLocation().X / chunkSize,
 			(int32)trackedCharacter->GetActorLocation().Y / chunkSize
@@ -169,7 +167,6 @@ void AProceduralTerrainGenerator::TrackCharacter()
 					CreateChunk(chunksToAdd[i]);
 				}
 			}
-
 		}
 	}
 }
@@ -251,8 +248,8 @@ void AProceduralTerrainGenerator::Init()
 	settings.bUseAsyncCooking = true;
 	meshGenerator->SetCollisionSettings(settings);
 	meshGenerator->DisableNormalTangentGeneration();
-	meshGenerator->RemoveAllSectionsForLOD(0);
 	ChunkMap.Empty();
+	USimplexNoiseBPLibrary::setNoiseSeed(noiseSeed);
 	bRun = true;	
 }
 void AProceduralTerrainGenerator::EndPlay(const EEndPlayReason::Type EndPlayReason)

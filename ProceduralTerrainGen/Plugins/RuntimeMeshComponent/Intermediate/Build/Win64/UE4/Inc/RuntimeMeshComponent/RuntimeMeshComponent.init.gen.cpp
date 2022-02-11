@@ -25,8 +25,8 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshComponent_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xD21A0DB9,
-				0xB7F31851,
+				0x49618F3C,
+				0xA7F2A7D0,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

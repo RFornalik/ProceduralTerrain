@@ -17,15 +17,15 @@ class URuntimeMeshProvider;
 #endif
 #define RUNTIMEMESHCOMPONENT_RuntimeMesh_generated_h
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_40_DELEGATE \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_40_DELEGATE \
 static inline void FRuntimeMeshCollisionUpdatedDelegate_DelegateWrapper(const FMulticastScriptDelegate& RuntimeMeshCollisionUpdatedDelegate) \
 { \
 	RuntimeMeshCollisionUpdatedDelegate.ProcessMulticastDelegate<UObject>(NULL); \
 }
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_SPARSE_DATA
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_SPARSE_DATA
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetBodySetup); \
 	DECLARE_FUNCTION(execGetLocalBounds); \
@@ -36,7 +36,7 @@ static inline void FRuntimeMeshCollisionUpdatedDelegate_DelegateWrapper(const FM
 	DECLARE_FUNCTION(execInitialize);
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetBodySetup); \
 	DECLARE_FUNCTION(execGetLocalBounds); \
@@ -47,7 +47,7 @@ static inline void FRuntimeMeshCollisionUpdatedDelegate_DelegateWrapper(const FM
 	DECLARE_FUNCTION(execInitialize);
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS_NO_PURE_DECLS \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesURuntimeMesh(); \
 	friend struct Z_Construct_UClass_URuntimeMesh_Statics; \
@@ -57,7 +57,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<URuntimeMesh*>(this); }
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS \
 private: \
 	static void StaticRegisterNativesURuntimeMesh(); \
 	friend struct Z_Construct_UClass_URuntimeMesh_Statics; \
@@ -67,7 +67,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<URuntimeMesh*>(this); }
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_STANDARD_CONSTRUCTORS \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API URuntimeMesh(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(URuntimeMesh) \
@@ -80,7 +80,7 @@ private: \
 public:
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_ENHANCED_CONSTRUCTORS \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API URuntimeMesh(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -93,7 +93,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(URuntimeMesh); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(URuntimeMesh)
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_PRIVATE_PROPERTY_OFFSET \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__MeshProviderPtr() { return STRUCT_OFFSET(URuntimeMesh, MeshProviderPtr); } \
 	FORCEINLINE static uint32 __PPO__BodySetup() { return STRUCT_OFFSET(URuntimeMesh, BodySetup); } \
 	FORCEINLINE static uint32 __PPO__CollisionSource() { return STRUCT_OFFSET(URuntimeMesh, CollisionSource); } \
@@ -102,27 +102,27 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(URuntimeMesh); \
 	FORCEINLINE static uint32 __PPO__SlotNameLookup() { return STRUCT_OFFSET(URuntimeMesh, SlotNameLookup); }
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_43_PROLOG
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_GENERATED_BODY_LEGACY \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_43_PROLOG
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_SPARSE_DATA \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_STANDARD_CONSTRUCTORS \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_PRIVATE_PROPERTY_OFFSET \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_SPARSE_DATA \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_GENERATED_BODY \
+#define ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_SPARSE_DATA \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS_NO_PURE_DECLS \
-	HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_ENHANCED_CONSTRUCTORS \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_PRIVATE_PROPERTY_OFFSET \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_SPARSE_DATA \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_INCLASS_NO_PURE_DECLS \
+	ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h_48_ENHANCED_CONSTRUCTORS \
 static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class RuntimeMesh."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -130,7 +130,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<class URuntimeMesh>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID HostProject_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h
+#define CURRENT_FILE_ID ProceduralTerrainGen_Plugins_RuntimeMeshComponent_Source_RuntimeMeshComponent_Public_RuntimeMesh_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -287,17 +287,17 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderStaticMesh() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ComplexCollisionLOD_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StaticMesh_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ComplexCollisionLOD;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLOD_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxLOD;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StaticMesh_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ComplexCollisionLOD_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ComplexCollisionLOD;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -323,14 +323,14 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderStaticMesh() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD_MetaData[] = {
-		{ "BlueprintGetter", "GetComplexCollisionLOD" },
-		{ "BlueprintSetter", "SetComplexCollisionLOD" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh_MetaData[] = {
+		{ "BlueprintGetter", "GetStaticMesh" },
+		{ "BlueprintSetter", "SetStaticMesh" },
 		{ "Category", "RuntimeMesh|Providers|StaticMesh" },
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderStaticMesh.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD = { "ComplexCollisionLOD", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderStaticMesh, ComplexCollisionLOD), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderStaticMesh, StaticMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_MaxLOD_MetaData[] = {
 		{ "BlueprintGetter", "GetMaxLOD" },
@@ -341,18 +341,18 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderStaticMesh() {}
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_MaxLOD = { "MaxLOD", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderStaticMesh, MaxLOD), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_MaxLOD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_MaxLOD_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh_MetaData[] = {
-		{ "BlueprintGetter", "GetStaticMesh" },
-		{ "BlueprintSetter", "SetStaticMesh" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD_MetaData[] = {
+		{ "BlueprintGetter", "GetComplexCollisionLOD" },
+		{ "BlueprintSetter", "SetComplexCollisionLOD" },
 		{ "Category", "RuntimeMesh|Providers|StaticMesh" },
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderStaticMesh.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderStaticMesh, StaticMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD = { "ComplexCollisionLOD", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderStaticMesh, ComplexCollisionLOD), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_MaxLOD,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_StaticMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_MaxLOD,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::NewProp_ComplexCollisionLOD,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_URuntimeMeshProviderStaticMesh_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<URuntimeMeshProviderStaticMesh>::IsAbstract,
@@ -381,7 +381,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderStaticMesh() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshProviderStaticMesh, 3554224542);
+	IMPLEMENT_CLASS(URuntimeMeshProviderStaticMesh, 1025967608);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshProviderStaticMesh>()
 	{
 		return URuntimeMeshProviderStaticMesh::StaticClass();

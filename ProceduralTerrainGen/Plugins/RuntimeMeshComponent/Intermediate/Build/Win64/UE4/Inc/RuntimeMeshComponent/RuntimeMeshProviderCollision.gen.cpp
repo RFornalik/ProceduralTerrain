@@ -187,24 +187,24 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderCollision() {}
 			int32 SectionId;
 			bool bCollisionEnabled;
 		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static void NewProp_bCollisionEnabled_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCollisionEnabled;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshProviderCollision_eventSetRenderableSectionAffectsCollision_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled_SetBit(void* Obj)
 	{
 		((RuntimeMeshProviderCollision_eventSetRenderableSectionAffectsCollision_Parms*)Obj)->bCollisionEnabled = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled = { "bCollisionEnabled", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(RuntimeMeshProviderCollision_eventSetRenderableSectionAffectsCollision_Parms), &Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(RuntimeMeshProviderCollision_eventSetRenderableSectionAffectsCollision_Parms, SectionId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::NewProp_bCollisionEnabled,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision_Statics::Function_MetaDataParams[] = {
@@ -234,28 +234,28 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderCollision() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionMesh_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LODForMeshCollision_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionMesh;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODForMeshCollision;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_RenderableCollisionData_ValueProp;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_RenderableCollisionData_Key_KeyProp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RenderableCollisionData_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMapPropertyParams NewProp_RenderableCollisionData;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionsAffectingCollision_ElementProp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionsAffectingCollision_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FSetPropertyParams NewProp_SectionsAffectingCollision;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionSettings_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionSettings;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionsAffectingCollision_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionMesh_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FSetPropertyParams NewProp_SectionsAffectingCollision;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionsAffectingCollision_ElementProp;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RenderableCollisionData_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FMapPropertyParams NewProp_RenderableCollisionData;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_RenderableCollisionData_Key_KeyProp;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_RenderableCollisionData_ValueProp;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LODForMeshCollision_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_LODForMeshCollision;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionMesh;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -268,7 +268,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderCollision() {}
 		{ &Z_Construct_UFunction_URuntimeMeshProviderCollision_SetCollisionMesh, "SetCollisionMesh" }, // 1702370284
 		{ &Z_Construct_UFunction_URuntimeMeshProviderCollision_SetCollisionSettings, "SetCollisionSettings" }, // 632934980
 		{ &Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableLODForCollision, "SetRenderableLODForCollision" }, // 2250136163
-		{ &Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision, "SetRenderableSectionAffectsCollision" }, // 2002620005
+		{ &Z_Construct_UFunction_URuntimeMeshProviderCollision_SetRenderableSectionAffectsCollision, "SetRenderableSectionAffectsCollision" }, // 2202429722
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::Class_MetaDataParams[] = {
@@ -279,11 +279,26 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderCollision() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh = { "CollisionMesh", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, CollisionMesh), Z_Construct_UScriptStruct_FRuntimeMeshCollisionData, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision = { "LODForMeshCollision", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, LODForMeshCollision), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_ValueProp = { "RenderableCollisionData", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 1, Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_Key_KeyProp = { "RenderableCollisionData_Key", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FMapPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData = { "RenderableCollisionData", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, RenderableCollisionData), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_ElementProp = { "SectionsAffectingCollision", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FSetPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision = { "SectionsAffectingCollision", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, SectionsAffectingCollision), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionSettings_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
@@ -291,35 +306,20 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderCollision() {}
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionSettings = { "CollisionSettings", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, CollisionSettings), Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionSettings_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionSettings_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FSetPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision = { "SectionsAffectingCollision", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, SectionsAffectingCollision), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_ElementProp = { "SectionsAffectingCollision", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FMapPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData = { "RenderableCollisionData", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, RenderableCollisionData), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_Key_KeyProp = { "RenderableCollisionData_Key", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_ValueProp = { "RenderableCollisionData", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 1, Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision = { "LODForMeshCollision", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, LODForMeshCollision), METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh = { "CollisionMesh", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderCollision, CollisionMesh), Z_Construct_UScriptStruct_FRuntimeMeshCollisionData, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionSettings,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_ElementProp,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_Key_KeyProp,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_ValueProp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_LODForMeshCollision,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_ValueProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData_Key_KeyProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_RenderableCollisionData,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision_ElementProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_SectionsAffectingCollision,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionSettings,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::NewProp_CollisionMesh,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_URuntimeMeshProviderCollision_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<URuntimeMeshProviderCollision>::IsAbstract,
@@ -348,7 +348,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderCollision() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshProviderCollision, 3697919685);
+	IMPLEMENT_CLASS(URuntimeMeshProviderCollision, 367539992);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshProviderCollision>()
 	{
 		return URuntimeMeshProviderCollision::StaticClass();

@@ -213,13 +213,13 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderBox() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Material_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Material;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BoxRadius_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_BoxRadius;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Material_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Material;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -243,15 +243,6 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderBox() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material_MetaData[] = {
-		{ "BlueprintGetter", "GetBoxMaterial" },
-		{ "BlueprintSetter", "SetBoxMaterial" },
-		{ "Category", "RuntimeMesh|Providers|Box" },
-		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderBox.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material = { "Material", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderBox, Material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_BoxRadius_MetaData[] = {
 		{ "BlueprintGetter", "GetBoxRadius" },
 		{ "BlueprintSetter", "SetBoxRadius" },
@@ -260,9 +251,18 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderBox() {}
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_BoxRadius = { "BoxRadius", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderBox, BoxRadius), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_BoxRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_BoxRadius_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material_MetaData[] = {
+		{ "BlueprintGetter", "GetBoxMaterial" },
+		{ "BlueprintSetter", "SetBoxMaterial" },
+		{ "Category", "RuntimeMesh|Providers|Box" },
+		{ "ModuleRelativePath", "Public/Providers/RuntimeMeshProviderBox.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material = { "Material", nullptr, (EPropertyFlags)0x0040000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(URuntimeMeshProviderBox, Material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_URuntimeMeshProviderBox_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_BoxRadius,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_URuntimeMeshProviderBox_Statics::NewProp_Material,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_URuntimeMeshProviderBox_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<URuntimeMeshProviderBox>::IsAbstract,
@@ -291,7 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshProviderBox() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(URuntimeMeshProviderBox, 4093657772);
+	IMPLEMENT_CLASS(URuntimeMeshProviderBox, 2352847252);
 	template<> RUNTIMEMESHCOMPONENT_API UClass* StaticClass<URuntimeMeshProviderBox>()
 	{
 		return URuntimeMeshProviderBox::StaticClass();

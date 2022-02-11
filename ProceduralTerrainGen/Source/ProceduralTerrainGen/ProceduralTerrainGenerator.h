@@ -117,7 +117,7 @@ public:
 		float heightScale = 1.0f;
 	UPROPERTY(EditAnywhere, Category = "Properties")
 		float noBlendZone = 1.0f;
-	UPROPERTY(EditAnywhere, Category = "Properties")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Properties")
 		int32 noiseSeed = 0;
 	UPROPERTY(EditAnywhere, Category = "Properties")
 		int32 spawnSpeed = 20;

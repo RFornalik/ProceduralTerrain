@@ -16,25 +16,25 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCollision() {}
 	RUNTIMEMESHCOMPONENT_API UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType();
 	UPackage* Z_Construct_UPackage__Script_RuntimeMeshComponent();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionTexCoordStream();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionTriangleStream();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionVertexStream();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionTriangleStream();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionTexCoordStream();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo();
 	ENGINE_API UClass* Z_Construct_UClass_UBodySetup_NoRegister();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionData();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionMaterialIndexStream();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo();
-	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 	RUNTIMEMESHCOMPONENT_API UClass* Z_Construct_UClass_URuntimeMeshProvider_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere();
-	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh();
 	RUNTIMEMESHCOMPONENT_API UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionCookingMode();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox();
+	RUNTIMEMESHCOMPONENT_API UScriptStruct* Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FBox();
 // End Cross Module References
 	static UEnum* ERuntimeMeshCollisionFaceSourceType_StaticEnum()
@@ -51,7 +51,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCollision() {}
 		return ERuntimeMeshCollisionFaceSourceType_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ERuntimeMeshCollisionFaceSourceType(ERuntimeMeshCollisionFaceSourceType_StaticEnum, TEXT("/Script/RuntimeMeshComponent"), TEXT("ERuntimeMeshCollisionFaceSourceType"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType_Hash() { return 1575304872U; }
+	uint32 Get_Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType_Hash() { return 3639214529U; }
 	UEnum* Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType()
 	{
 #if WITH_HOT_RELOAD
@@ -90,6 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeRuntimeMeshCollision() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -127,17 +128,17 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TexCoords_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vertices_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TexCoords;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Triangles;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vertices_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TexCoords_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TexCoords;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -152,12 +153,12 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshRenderableCollisionData>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords = { "TexCoords", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshRenderableCollisionData, TexCoords), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTexCoordStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices = { "Vertices", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshRenderableCollisionData, Vertices), Z_Construct_UScriptStruct_FRuntimeMeshCollisionVertexStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Triangles_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
@@ -166,16 +167,16 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshRenderableCollisionData, Triangles), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTriangleStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Triangles_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices = { "Vertices", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshRenderableCollisionData, Vertices), Z_Construct_UScriptStruct_FRuntimeMeshCollisionVertexStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords = { "TexCoords", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshRenderableCollisionData, TexCoords), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTexCoordStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Triangles,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Vertices,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_Triangles,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::NewProp_TexCoords,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -205,7 +206,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Hash() { return 3930798378U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshRenderableCollisionData_Hash() { return 2795449582U; }
 class UScriptStruct* FRuntimeMeshAsyncBodySetupData::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -235,14 +236,14 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionSources_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_CollisionSources;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionSources_Inner;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BodySetup_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BodySetup;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionSources_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionSources_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_CollisionSources;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -256,22 +257,22 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshAsyncBodySetupData>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_MetaData[] = {
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources = { "CollisionSources", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshAsyncBodySetupData, CollisionSources), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_Inner = { "CollisionSources", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_BodySetup_MetaData[] = {
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_BodySetup = { "BodySetup", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshAsyncBodySetupData, BodySetup), Z_Construct_UClass_UBodySetup_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_BodySetup_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_BodySetup_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_Inner = { "CollisionSources", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_MetaData[] = {
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources = { "CollisionSources", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshAsyncBodySetupData, CollisionSources), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_BodySetup,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::NewProp_CollisionSources,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -301,7 +302,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Hash() { return 4236355409U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshAsyncBodySetupData_Hash() { return 3820996354U; }
 class UScriptStruct* FRuntimeMeshCollisionData::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -331,46 +332,46 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bDisableActiveEdgePrecompute_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vertices_MetaData[];
 #endif
-		static void NewProp_bDisableActiveEdgePrecompute_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bDisableActiveEdgePrecompute;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bFastCook_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
 #endif
-		static void NewProp_bFastCook_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bFastCook;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Triangles;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bDeformableMesh_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TexCoords_MetaData[];
 #endif
-		static void NewProp_bDeformableMesh_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bDeformableMesh;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TexCoords;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaterialIndices_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_MaterialIndices;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionSources_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionSources_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_CollisionSources;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bFlipNormals_MetaData[];
 #endif
 		static void NewProp_bFlipNormals_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bFlipNormals;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CollisionSources_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bDeformableMesh_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_CollisionSources;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CollisionSources_Inner;
+		static void NewProp_bDeformableMesh_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bDeformableMesh;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaterialIndices_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bFastCook_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_MaterialIndices;
+		static void NewProp_bFastCook_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bFastCook;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TexCoords_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bDisableActiveEdgePrecompute_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TexCoords;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Triangles_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Triangles;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vertices_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Vertices;
+		static void NewProp_bDisableActiveEdgePrecompute_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bDisableActiveEdgePrecompute;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -385,38 +386,41 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionData>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_SetBit(void* Obj)
-	{
-		((FRuntimeMeshCollisionData*)Obj)->bDisableActiveEdgePrecompute = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute = { "bDisableActiveEdgePrecompute", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices = { "Vertices", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, Vertices), Z_Construct_UScriptStruct_FRuntimeMeshCollisionVertexStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_SetBit(void* Obj)
-	{
-		((FRuntimeMeshCollisionData*)Obj)->bFastCook = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook = { "bFastCook", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, Triangles), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTriangleStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_SetBit(void* Obj)
-	{
-		((FRuntimeMeshCollisionData*)Obj)->bDeformableMesh = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh = { "bDeformableMesh", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords = { "TexCoords", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, TexCoords), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTexCoordStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices = { "MaterialIndices", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, MaterialIndices), Z_Construct_UScriptStruct_FRuntimeMeshCollisionMaterialIndexStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_Inner = { "CollisionSources", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources = { "CollisionSources", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, CollisionSources), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
@@ -429,52 +433,49 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals = { "bFlipNormals", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources = { "CollisionSources", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, CollisionSources), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_Inner = { "CollisionSources", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_SetBit(void* Obj)
+	{
+		((FRuntimeMeshCollisionData*)Obj)->bDeformableMesh = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh = { "bDeformableMesh", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices = { "MaterialIndices", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, MaterialIndices), Z_Construct_UScriptStruct_FRuntimeMeshCollisionMaterialIndexStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices_MetaData)) };
+	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_SetBit(void* Obj)
+	{
+		((FRuntimeMeshCollisionData*)Obj)->bFastCook = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook = { "bFastCook", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords = { "TexCoords", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, TexCoords), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTexCoordStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles = { "Triangles", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, Triangles), Z_Construct_UScriptStruct_FRuntimeMeshCollisionTriangleStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices = { "Vertices", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionData, Vertices), Z_Construct_UScriptStruct_FRuntimeMeshCollisionVertexStream, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices_MetaData)) };
+	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_SetBit(void* Obj)
+	{
+		((FRuntimeMeshCollisionData*)Obj)->bDisableActiveEdgePrecompute = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute = { "bDisableActiveEdgePrecompute", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionData), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Vertices,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_Triangles,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_TexCoords,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_MaterialIndices,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_CollisionSources,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFlipNormals,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDeformableMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bFastCook,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::NewProp_bDisableActiveEdgePrecompute,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -504,7 +505,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Hash() { return 616408235U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionData_Hash() { return 3989106470U; }
 class UScriptStruct* FRuntimeMeshCollisionHitInfo::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -534,26 +535,26 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Material_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceProvider_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Material;
+		static const UE4CodeGen_Private::FWeakObjectPropertyParams NewProp_SourceProvider;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_SourceType_Underlying;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FaceIndex_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceType_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_FaceIndex;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_SourceType;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionId_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceType_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FaceIndex_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_SourceType;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_SourceType_Underlying;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_FaceIndex;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceProvider_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Material_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FWeakObjectPropertyParams NewProp_SourceProvider;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Material;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -568,19 +569,20 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionHitInfo>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material = { "Material", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, Material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material_MetaData)) };
+	const UE4CodeGen_Private::FWeakObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider = { "SourceProvider", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, SourceProvider), Z_Construct_UClass_URuntimeMeshProvider_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex = { "FaceIndex", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, FaceIndex), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex_MetaData)) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType = { "SourceType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, SourceType), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SectionId_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
@@ -589,27 +591,26 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, SectionId), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SectionId_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SectionId_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType = { "SourceType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, SourceType), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_MetaData)) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex = { "FaceIndex", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, FaceIndex), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FWeakObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider = { "SourceProvider", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, SourceProvider), Z_Construct_UClass_URuntimeMeshProvider_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material = { "Material", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionHitInfo, Material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SectionId,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceProvider,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SourceType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_FaceIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::NewProp_Material,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -639,7 +640,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Hash() { return 2306209968U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionHitInfo_Hash() { return 5089068U; }
 class UScriptStruct* FRuntimeMeshCollisionSourceSectionInfo::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -669,26 +670,26 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceType_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StartIndex_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_SourceType;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_SourceType_Underlying;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionId_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceProvider_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FWeakObjectPropertyParams NewProp_SourceProvider;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_StartIndex;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EndIndex_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_EndIndex;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StartIndex_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceProvider_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_StartIndex;
+		static const UE4CodeGen_Private::FWeakObjectPropertyParams NewProp_SourceProvider;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SectionId_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_SectionId;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_SourceType_Underlying;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SourceType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_SourceType;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -703,27 +704,12 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionSourceSectionInfo>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType = { "SourceType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, SourceType), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_MetaData)) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, SectionId), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FWeakObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider = { "SourceProvider", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, SourceProvider), Z_Construct_UClass_URuntimeMeshProvider_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex = { "StartIndex", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, StartIndex), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_EndIndex_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
@@ -732,19 +718,34 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_EndIndex = { "EndIndex", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, EndIndex), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_EndIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_EndIndex_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex = { "StartIndex", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, StartIndex), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex_MetaData)) };
+	const UE4CodeGen_Private::FWeakObjectPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider = { "SourceProvider", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, SourceProvider), Z_Construct_UClass_URuntimeMeshProvider_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId = { "SectionId", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, SectionId), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|CollisionMesh" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType = { "SourceType", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSourceSectionInfo, SourceType), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionFaceSourceType, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_EndIndex,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_StartIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_EndIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceProvider,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SectionId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::NewProp_SourceType,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -774,7 +775,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Hash() { return 4008949469U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionSourceSectionInfo_Hash() { return 1501614410U; }
 class UScriptStruct* FRuntimeMeshCollisionSettings::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -804,40 +805,40 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Capsules_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bUseComplexAsSimple_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Capsules;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Capsules_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Boxes_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Boxes;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Boxes_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Spheres_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Spheres;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Spheres_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ConvexElements_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ConvexElements;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ConvexElements_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CookingMode_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CookingMode;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CookingMode_Underlying;
+		static void NewProp_bUseComplexAsSimple_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bUseComplexAsSimple;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bUseAsyncCooking_MetaData[];
 #endif
 		static void NewProp_bUseAsyncCooking_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bUseAsyncCooking;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_CookingMode_Underlying;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bUseComplexAsSimple_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CookingMode_MetaData[];
 #endif
-		static void NewProp_bUseComplexAsSimple_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bUseComplexAsSimple;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_CookingMode;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ConvexElements_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ConvexElements_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ConvexElements;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Spheres_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Spheres_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Spheres;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Boxes_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Boxes_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Boxes;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Capsules_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Capsules_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Capsules;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -852,45 +853,16 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionSettings>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Settings" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules = { "Capsules", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, Capsules), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_Inner = { "Capsules", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Settings" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes = { "Boxes", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, Boxes), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_Inner = { "Boxes", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Settings" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres = { "Spheres", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, Spheres), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_Inner = { "Spheres", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Settings" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements = { "ConvexElements", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, ConvexElements), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_Inner = { "ConvexElements", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Settings" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode = { "CookingMode", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, CookingMode), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionCookingMode, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_MetaData)) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_SetBit(void* Obj)
+	{
+		((FRuntimeMeshCollisionSettings*)Obj)->bUseComplexAsSimple = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple = { "bUseComplexAsSimple", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionSettings), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Settings" },
@@ -902,30 +874,59 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		((FRuntimeMeshCollisionSettings*)Obj)->bUseAsyncCooking = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking = { "bUseAsyncCooking", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionSettings), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Settings" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
 	};
 #endif
-	void Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_SetBit(void* Obj)
-	{
-		((FRuntimeMeshCollisionSettings*)Obj)->bUseComplexAsSimple = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple = { "bUseComplexAsSimple", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FRuntimeMeshCollisionSettings), &Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple_MetaData)) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode = { "CookingMode", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, CookingMode), Z_Construct_UEnum_RuntimeMeshComponent_ERuntimeMeshCollisionCookingMode, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_Inner = { "ConvexElements", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Settings" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements = { "ConvexElements", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, ConvexElements), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_Inner = { "Spheres", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Settings" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres = { "Spheres", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, Spheres), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_Inner = { "Boxes", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Settings" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes = { "Boxes", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, Boxes), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_Inner = { "Capsules", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Settings" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules = { "Capsules", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSettings, Capsules), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseComplexAsSimple,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_bUseAsyncCooking,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_CookingMode,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_ConvexElements,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Spheres,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Boxes,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::NewProp_Capsules,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -955,7 +956,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Hash() { return 1852107700U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionSettings_Hash() { return 1835786083U; }
 class UScriptStruct* FRuntimeMeshCollisionMaterialIndexStream::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -1261,21 +1262,21 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Length_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Center_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Length;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Radius_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Radius;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Center;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Rotation_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Rotation;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Center_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Radius_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Center;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Radius;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Length_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Length;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -1290,23 +1291,14 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionCapsule>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Capsule" },
-		{ "Comment", "/** This is of line-segment ie. add Radius to both ends to find total length. */" },
+		{ "Comment", "/** Position of the capsule's origin */" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-		{ "ToolTip", "This is of line-segment ie. add Radius to both ends to find total length." },
+		{ "ToolTip", "Position of the capsule's origin" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length = { "Length", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Length), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Capsule" },
-		{ "Comment", "/** Radius of the capsule */" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-		{ "ToolTip", "Radius of the capsule" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius = { "Radius", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Radius), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Center), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Rotation_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Capsule" },
@@ -1317,19 +1309,28 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Rotation = { "Rotation", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Rotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Rotation_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Capsule" },
-		{ "Comment", "/** Position of the capsule's origin */" },
+		{ "Comment", "/** Radius of the capsule */" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-		{ "ToolTip", "Position of the capsule's origin" },
+		{ "ToolTip", "Radius of the capsule" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Center), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius = { "Radius", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Radius), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Capsule" },
+		{ "Comment", "/** This is of line-segment ie. add Radius to both ends to find total length. */" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+		{ "ToolTip", "This is of line-segment ie. add Radius to both ends to find total length." },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length = { "Length", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionCapsule, Length), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Rotation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Center,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Rotation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Radius,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::NewProp_Length,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -1359,7 +1360,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Hash() { return 3628333597U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionCapsule_Hash() { return 2803837152U; }
 class UScriptStruct* FRuntimeMeshCollisionBox::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -1389,17 +1390,17 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Extents_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Center_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Extents;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Center;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Rotation_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Rotation;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Center_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Extents_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Center;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Extents;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -1414,14 +1415,14 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionBox>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Box" },
-		{ "Comment", "/** Extents of the box */" },
+		{ "Comment", "/** Position of the box's origin */" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-		{ "ToolTip", "Extents of the box" },
+		{ "ToolTip", "Position of the box's origin" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents = { "Extents", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionBox, Extents), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionBox, Center), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Rotation_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Box" },
@@ -1432,18 +1433,18 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Rotation = { "Rotation", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionBox, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Rotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Rotation_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Box" },
-		{ "Comment", "/** Position of the box's origin */" },
+		{ "Comment", "/** Extents of the box */" },
 		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-		{ "ToolTip", "Position of the box's origin" },
+		{ "ToolTip", "Extents of the box" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionBox, Center), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents = { "Extents", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionBox, Extents), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Rotation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Center,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Rotation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::NewProp_Extents,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -1473,7 +1474,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Hash() { return 688202633U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionBox_Hash() { return 2719741910U; }
 class UScriptStruct* FRuntimeMeshCollisionSphere::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -1503,13 +1504,13 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Radius_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Radius;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Center_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Center;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Radius_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Radius;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -1524,15 +1525,6 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionSphere>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Sphere" },
-		{ "Comment", "/** Radius of the sphere */" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-		{ "ToolTip", "Radius of the sphere" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius = { "Radius", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSphere, Radius), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Center_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Sphere" },
 		{ "Comment", "/** Position of the sphere's origin */" },
@@ -1541,9 +1533,18 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSphere, Center), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Center_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Center_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Sphere" },
+		{ "Comment", "/** Radius of the sphere */" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+		{ "ToolTip", "Radius of the sphere" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius = { "Radius", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionSphere, Radius), METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Center,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::NewProp_Radius,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -1573,7 +1574,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Hash() { return 3859692309U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionSphere_Hash() { return 2874964244U; }
 class UScriptStruct* FRuntimeMeshCollisionConvexMesh::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -1602,15 +1603,15 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		static const UE4CodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
 #endif
 		static void* NewStructOps();
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BoundingBox_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_BoundingBox;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_VertexBuffer_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VertexBuffer_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_VertexBuffer;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_VertexBuffer_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BoundingBox_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_BoundingBox;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -1624,13 +1625,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 	{
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FRuntimeMeshCollisionConvexMesh>();
 	}
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox_MetaData[] = {
-		{ "Category", "RuntimeMesh|Collision|Convex" },
-		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox = { "BoundingBox", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionConvexMesh, BoundingBox), Z_Construct_UScriptStruct_FBox, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer_Inner = { "VertexBuffer", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer_MetaData[] = {
 		{ "Category", "RuntimeMesh|Collision|Convex" },
@@ -1638,11 +1633,17 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer = { "VertexBuffer", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionConvexMesh, VertexBuffer), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer_Inner = { "VertexBuffer", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox_MetaData[] = {
+		{ "Category", "RuntimeMesh|Collision|Convex" },
+		{ "ModuleRelativePath", "Public/RuntimeMeshCollision.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox = { "BoundingBox", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FRuntimeMeshCollisionConvexMesh, BoundingBox), Z_Construct_UScriptStruct_FBox, METADATA_PARAMS(Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_VertexBuffer,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::NewProp_BoundingBox,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_RuntimeMeshComponent,
@@ -1672,7 +1673,7 @@ static struct FScriptStruct_RuntimeMeshComponent_StaticRegisterNativesFRuntimeMe
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Hash() { return 438697387U; }
+	uint32 Get_Z_Construct_UScriptStruct_FRuntimeMeshCollisionConvexMesh_Hash() { return 213135127U; }
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)
