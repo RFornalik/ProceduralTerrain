@@ -200,7 +200,7 @@ float AProceduralTerrainGenerator::BiomeDeform(FVector2D vert, EBiomeType biome)
 	}
 	case EBiomeType::PEAKS:
 	{
-		return BiomeDeform(vert, EBiomeType::MOUNTAINS) + 1000 + (USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X * 2, vert.Y * 2, 2.3f, 0.6f, 3, 1, true)) * 500;
+		return BiomeDeform(vert, EBiomeType::MOUNTAINS) + 1000 + (USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X/2 , vert.Y/2, 2.3f, 0.6f, 3, 1, true)) * 250;
 	}
 	case EBiomeType::STD:
 	{
