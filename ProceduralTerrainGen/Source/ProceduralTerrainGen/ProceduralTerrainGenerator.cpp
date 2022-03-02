@@ -19,7 +19,9 @@
 // Sets default values
 AProceduralTerrainGenerator::AProceduralTerrainGenerator()
 {
+	//Pozwala na wykonywanie metody Tick()
 	PrimaryActorTick.bCanEverTick = true;
+	//Konstrukcja komponentu
 	meshGenerator = CreateDefaultSubobject<URuntimeMeshComponentStatic>("mesh");
 
 }
@@ -34,9 +36,12 @@ void AProceduralTerrainGenerator::BeginPlay()
 // Called every frame
 void AProceduralTerrainGenerator::Tick(float DeltaTime)
 {
-
+	//Tick Klasy nadrzêdnej
 	Super::Tick(DeltaTime);
+	//Je¿eli generacja siê rozpoczê³a, sprawdzaj pozycjê postaci i wzglêdem niej generuj teren
 	if(bRun)TrackCharacter();
+
+	//...
 	for (int32 i = 0; i < spawnSpeed && actorsToDestroy.Num()>0; i++)
 	{
 		actorsToDestroy[0]->Destroy();
@@ -63,55 +68,78 @@ void AProceduralTerrainGenerator::Tick(float DeltaTime)
 
 
 
-void AProceduralTerrainGenerator::OnConstruction(const FTransform& Transform)
-{
-	Super::OnConstruction(Transform);
-	USimplexNoiseBPLibrary::setNoiseSeed(noiseSeed);
-}
 
 bool AProceduralTerrainGenerator::CreateChunk(FIntPoint coordinates)
 {
+	//Nie generowaæ segmentu, jeœli generator ma ustawione b³êdne parametry
 	if (chunkResolution < 2) return false;
+	//Zmienna okreœlaj¹ca czy na odpowiednim segmencie siatki generowaæ blok wody
 	bool bCreateWater = false;
+	//Zbiór punktów siatki wielok¹tów
 	TArray<FVector> verts;
+	//Zbiór trójk¹tów siatki wielok¹tów
 	TArray<int32> tris;
+	//Zbiory wartoœci kana³ów UV dla ka¿dego punktu siatki: podstawowego i kana³u wartoœci biomu
 	TArray<FVector2D> UV0, UV_Biome;
-	TArray<AActor*> structs;
+	//Zmienna pomocnicza, okreœlaj¹ca odstêpy pomiêdzy s¹siednimi punktami siatki w osiach X i Y
 	float step = chunkSize / (chunkResolution - 1);
+	//Zmienna pomocnicza zawieraj¹ca dane o biomie w aktualnie modyfikowanym punkcie siatki wielok¹tów
 	float biome;
 
-
+	//Pierwotne utworzenie rozmieszczonych w 2D punktów siatki i przypisanie podstawowemu kana³owi UV odpowiednich wartoœci
 	UKismetProceduralMeshLibrary::CreateGridMeshWelded(chunkResolution, chunkResolution, tris, verts, UV0, step);
+	//Zarezerwowanie rozmiaru dla zbioru wartoœci kana³u UV biomu punktów, 
+	//by dynamiczny zbiór nie musia³ wielokrotnie dokonywaæ operacji przydzielania pamiêci
 	UV_Biome.Reserve(UV0.Num());
+
+	//Lokalne przesuniêcie ka¿dego punktu o koordynaty segmentu do któego nale¿¹.
 	int32 x = coordinates.X * chunkSize;
 	int32 y = coordinates.Y * chunkSize;
+	//Iterowanie po ka¿dym punkcie siatki
 	for (int32 i = 0; i < verts.Num(); i++)
 	{
 		FVector& vert = verts[i];
 
+		//Dodanie przesuniêcia do ka¿dego punktu
 		vert.X += x;
 		vert.Y += y;
 
+		//Generator biomów, wykorzystuj¹cy Simplex Noise
 		biome = USimplexNoiseBPLibrary::GetSimplexNoise2D_EX(vert.X / biomeScale, vert.Y / biomeScale, 2.3f, 0.6f, 4, 1, true);
 
+		//Dodajemy informacjê o biomie do punktu siatki
 		UV_Biome.Add(FVector2D(biome));
 
+		//Wykorzystanie informacji o biomie oraz punkcie siatki do przydzielenia mu odpowiedniej wysokoœci.
 		vert.Z += MapBiome(FVector2D(vert.X / noiseScale, vert.Y / noiseScale), biome) * heightScale;
+
+		//Ustalanie, czy na segmencie powinna zostaæ wygenerowana woda.
 		if (!bCreateWater)bCreateWater = (vert.Z <= 0);
 
+		//Generator struktur
 		GetActorOnPoint(vert, i, biome);
 	}
+	//Do struktur w kolejce zostaje dodana równie¿ woda, jeœli jest taka potrzeba
 	if (bCreateWater)actorsToAdd.Add(FQueuedActor(WaterBodyClass.Get(),FVector(x,y,0),FRotator(0,0,0),FVector(chunkSize/2,chunkSize/2,1),coordinates));
-	ReceiveChunk(coordinates, verts, tris, UV0, UV_Biome, structs);
+
+	//Przekazanie informacji o siatce do faktycznej jej generacji
+	ReceiveChunk(coordinates, verts, tris, UV0, UV_Biome);
+
+	//Zwróæ prawid³owe wykonanie metody
 	return true;
 }
 
 bool AProceduralTerrainGenerator::RemoveChunk(FIntPoint coordinates)
 {
+	//Je¿eli z jakiegoœ powodu usuwany jest nieistniej¹cy segment, nie wykonujemy reszty metody
 	if (!ChunkMap.Contains(coordinates)) return false;
+	//Dane o segmencie
 	FChunkData data = ChunkMap.FindRef(coordinates);
+	//Dodawanie wszystkich aktorów w segmencie do kolejki usuwaj¹cej
 	actorsToDestroy.Append(data.placeableStructures);
+	//Usuwanie odpowiedniej sekcji proceduralnej siatki za pomoc¹ komponentu
 	meshGenerator->GetProvider()->RemoveSection(0, data.meshSectionID);
+	//Usuwanie wpisu o nieistniej¹cej ju¿ sekcji siatki wielok¹tów
 	ChunkMap.Remove(coordinates);
 
 	return true;
@@ -119,29 +147,38 @@ bool AProceduralTerrainGenerator::RemoveChunk(FIntPoint coordinates)
 
 
 void AProceduralTerrainGenerator::ReceiveChunk(FIntPoint chunk, TArray<FVector>& verts, TArray<int32>& tris,
-	TArray<FVector2D>& UV0, TArray<FVector2D>& UVB, TArray<AActor*>& structures)
+	TArray<FVector2D>& UV0, TArray<FVector2D>& UVB)
 {
+	//indeks, który bêdzie przypisywany sekcji siatki wielok¹tów
 	int32 index = FindFirstFreeInt(meshGenerator->GetSectionIds(0));
+	//Zmienna pomocnicza, pusty zbiór dla pozosta³ych kana³ów UV sekcji
 	TArray<FVector2D> emptyUVs = TArray<FVector2D>();
-	FChunkData tmp = FChunkData(index, structures);
-	meshGenerator->CreateSectionFromComponents(0,index,0,verts,tris,TArray<FVector>(),UV0,UVB,emptyUVs,emptyUVs,TArray<FColor>(),TArray<FRuntimeMeshTangent>());
+	//Dane o sekcji siatki wielok¹tów
+	FChunkData tmp = FChunkData(index, TArray<AActor*>());
+	//Przekazywanie danych do komponentu
+	meshGenerator->CreateSectionFromComponents(0,index,0,verts,tris,TArray<FVector>(),UV0,UVB,
+		emptyUVs,emptyUVs,TArray<FColor>(),TArray<FRuntimeMeshTangent>());
 
+	//Dodanie wpisu o nowej sekcji siatki wielok¹tów
 	ChunkMap.Add(chunk, tmp);
 }
 
 
-// Function That Tracks Character to generate chunks where he goes
+// Metoda Generuj¹ca teren wzglêdem kursora bêd¹cego postaci¹
 void AProceduralTerrainGenerator::TrackCharacter()
 {
-	if(trackedCharacter)
+	if(trackedCharacter) //Wykonuje poni¿sz¹ instrukcjê jeœli kursor jest ustawiony
 	{
+		//Ustalenie koordynatów sekcji terenu, na której kursor(postaæ) siê znajduje
 		FIntPoint charChunk = FIntPoint(
 			(int32)trackedCharacter->GetActorLocation().X / chunkSize,
 			(int32)trackedCharacter->GetActorLocation().Y / chunkSize
 		);
+		//Jeœli koordynaty siê zmieni³y od ostatniej kratki symulacji, rozpocznij modyfikacjê siatki
 		if(charChunk!=lastCharChunk)
 		{
 			lastCharChunk = charChunk;
+			//Tworzenie zbioru koordynatów segmentów, które powinny byæ wygenerowane
 			TArray<FIntPoint> chunksToAdd;
 			for(int32 x =-(int32)renderDistanceInChunks;x <= (int32)renderDistanceInChunks;x++)
 			{
@@ -152,20 +189,19 @@ void AProceduralTerrainGenerator::TrackCharacter()
 			}
 
 
-
+			//Zbiór segmentów, które zosta³y ju¿ wygenerowane
 			TArray<FIntPoint> keys;
 			ChunkMap.GetKeys(keys);
 			for(int i = 0; i<keys.Num();i++)
 			{
+				//Usuwanie segmentów które s¹ za daleko
 				if (!chunksToAdd.Contains(keys[i])) RemoveChunk(keys[i]);
 			}
 
 			for(int i = 0;i< chunksToAdd.Num();i++)
 			{
-				if(!ChunkMap.Contains(chunksToAdd[i]))
-				{
-					CreateChunk(chunksToAdd[i]);
-				}
+				//Tworzenie segmentów, które nie zosta³y jeszcze wygenerowane, a powinny
+				if(!ChunkMap.Contains(chunksToAdd[i])) CreateChunk(chunksToAdd[i]);
 			}
 		}
 	}
@@ -251,12 +287,6 @@ void AProceduralTerrainGenerator::Init()
 	ChunkMap.Empty();
 	USimplexNoiseBPLibrary::setNoiseSeed(noiseSeed);
 	bRun = true;	
-}
-void AProceduralTerrainGenerator::EndPlay(const EEndPlayReason::Type EndPlayReason)
-{
-	Super::EndPlay(EndPlayReason);
-	meshGenerator->DisableNormalTangentGeneration();
-
 }
 void AProceduralTerrainGenerator::GetActorOnPoint(FVector& loc, int32 vertIndex, float biome)
 {

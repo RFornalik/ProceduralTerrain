@@ -8,3 +8,4 @@ ProceduralTerrainGen/Plugins/SimplexNoise/Intermediate/
 ProceduralTerrainGen/Plugins/SimplexNoise/Saved/
 ProceduralTerrainGen/Plugins/SimplexNoise/Binaries/
 ProceduralTerrainGen/Build/ProceduralTerrainGenerator_Wint64.rar
+*.zip
