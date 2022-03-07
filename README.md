@@ -1,5 +1,5 @@
 # ProceduralTerrainDemo
- Project files of my procedural terrain generator and a Sample game
+ Project files of my procedural terrain generator and a Sample game I made for my Engineering degree diploma.
 
 # Requirements:
 
