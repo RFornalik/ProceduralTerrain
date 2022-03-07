@@ -16,7 +16,8 @@ For Source Code:
 3. Open the .exe file
 
 # How to open the project:
-Open the .uproject file with Unreal Engine Installed
+1. Fork / Download the Repository
+2. Open the .uproject file with Unreal Engine Installed
 
 # Usage
 You can use this source code how You want, giving credit to me is greatly appreciated.
