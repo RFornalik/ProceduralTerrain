@@ -17,7 +17,7 @@ enum class EBiomeType :uint8
 	PLAINS = 2 UMETA(DisplayName = "PLAINS"), //Stepy, g³ówna rzeŸba terenu
 	MOUNTAINS = 3 UMETA(DisplayName = "MOUNTAINS"), //Góry
 	PEAKS = 4 UMETA(DisplayName = "PEAKS"), //Szczyty
-	STD = 5 UMETA(DisplayName = "STD") //Podstawowa deformacja terenu by poprawiæ jego ró¿norodnoœæ
+	STD = 5 UMETA(DisplayName = "STD") //Wstêpna deformacja terenu
 };
 
 //Struktura zawieraj¹ca dane na temat jednego segmentu siatki wielok¹tów
@@ -98,7 +98,8 @@ struct FQueuedActor
 		Chunk = chunk;
 		Scale = FVector(1, 1, 1);
 	}
-	FQueuedActor(UClass* _class, FVector loc, FRotator rot,FVector scale, FIntPoint chunk)
+	FQueuedActor(UClass* _class, FVector loc, FRotator rot,
+		FVector scale, FIntPoint chunk)
 	{
 		StructClass = _class;
 		Location = loc;
