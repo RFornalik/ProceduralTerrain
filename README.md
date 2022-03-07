@@ -2,11 +2,12 @@
  Project files of my procedural terrain generator and a Sample game
 
 # Requirements:
+
 For Project to open:
--Working Unreal Engine (version 4.26, possibly higher with eventual code alterations)
--Visual Studio 2019 Recommended, any Unreal Engine-Compatibile IDE Required
+1. Working Unreal Engine (version 4.26, possibly higher with eventual code alterations)
+2. Visual Studio 2019 Recommended, any Unreal Engine-Compatibile IDE Required
 For Source Code:
--Any text editor or IDE, Visual Studio 2019 Recommended
+Any text editor or IDE, Visual Studio 2019 Recommended
 
 # How to test the game:
 1. Fork / Download the Repository
