@@ -17,3 +17,6 @@ For Source Code:
 
 # How to open the project:
 Open the .uproject file with Unreal Engine Installed
+
+# Usage
+You can use this source code how You want, giving credit to me is greatly appreciated.
