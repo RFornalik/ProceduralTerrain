@@ -7,7 +7,7 @@ For Project to open:
 1. Working Unreal Engine (version 4.26, possibly higher with eventual code alterations)
 2. Visual Studio 2019 Recommended, any Unreal Engine-Compatibile IDE Required
 For Source Code:
-Any text editor or IDE, Visual Studio 2019 Recommended
+1. Any text editor or IDE, Visual Studio 2019 Recommended
 
 # How to test the game:
 1. Fork / Download the Repository
