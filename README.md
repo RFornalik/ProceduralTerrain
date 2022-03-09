@@ -11,7 +11,7 @@ For Source Code:
 1. Any text editor or IDE, Visual Studio 2019 Recommended
 
 For Game to run:
-1. A Low-End PC with directX11
+1. A Low-End PC with directX11 support
 
 # How to test the game:
 1. Fork / Download the Repository
