@@ -5,7 +5,7 @@
 
 For Project to open:
 1. Working Unreal Engine (version 4.26, possibly higher with eventual code alterations)
-2. Visual Studio 2019(with C++ game developement) or any other Unreal Engine-Compatibile IDE
+2. Visual Studio 2019(with C++ game developement module) or any other Unreal Engine-Compatibile IDE
 
 For Source Code:
 1. Any text editor or IDE, Visual Studio 2019 Recommended
