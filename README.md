@@ -22,7 +22,8 @@ For Game to run:
 1. Fork / Download the Repository
 2. Go to repository, click RMB on .uproject file > Generate Visual studio project files
 3. Wait for project to generate 
-2. Open the .uproject file
+4. Open the .uproject file
+5. Accept all rebuilding requests if neccessary
 
 # Usage
 You can use this source code how You want, giving credit to me is greatly appreciated.
